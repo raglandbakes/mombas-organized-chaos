@@ -1010,9 +1010,13 @@
 
       <!-- Web3Forms Integration: Replace YOUR_ACCESS_KEY_HERE with your key -->
       <form action="https://formsubmit.co/mombasorganizedchaos@gmail.com" method="POST">
-  <!-- Optional: Disables the captcha screen for faster checkout -->
+  <!-- Prevents the missing page error and sends user right back to your live site -->
+  <input type="hidden" name="_next" value="https://raglandbakes.github.io/mombas-organized-chaos/">
+  
+  <!-- Disables captcha screen -->
   <input type="hidden" name="_captcha" value="false">
-  <!-- Optional: Subject line in your inbox -->
+  
+  <!-- Email subject line -->
   <input type="hidden" name="_subject" value="New Order Request - Momba's Organized Chaos">
 
         <div class="form-group">
