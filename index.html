@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momba's Organized Chaos | Home Bakery & Handcrafted Crochet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --text-dark: #2B2118;
+      --text-muted: #6E6259;
+      --bakery-accent: #C27D38;
+      --crochet-accent: #5C7A58;
+      --border-color: #E8DFD5;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(43, 33, 24, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--bakery-accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 2.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #EFE8DE;
+      color: var(--bakery-accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--bakery-accent);
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--crochet-accent);
+    }
+
+    /* Content Layout */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(43, 33, 24, 0.1);
+    }
+
+    .card-img-wrapper {
+      height: 200px;
+      background: #EFE8DE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.4rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .tag-baking { color: var(--bakery-accent); }
+    .tag-crochet { color: var(--crochet-accent); }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.8rem;
+      margin-top: auto;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+    }
+
+    /* Policy & Schedule Notice */
+    .schedule-banner {
+      background: #EFE8DE;
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 4rem;
+      border-left: 5px solid var(--bakery-accent);
+    }
+
+    .schedule-banner h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-banner ul {
+      margin-left: 1.2rem;
+      margin-top: 0.6rem;
+      color: var(--text-muted);
+    }
+
+    .schedule-banner li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 220px;
+      background: #EFE8DE;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(43, 33, 24, 0.85));
+      color: #FFFFFF;
+      padding: 1.5rem 0.8rem 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* Testimonials Section */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-stars {
+      color: #E0A93B;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.8rem;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #EFE8DE;
+      color: var(--bakery-accent);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .author-avatar.crochet-theme {
+      color: var(--crochet-accent);
+    }
+
+    .author-info h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.1rem;
+    }
+
+    .author-info span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* FAQ Accordion */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto 4.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item details {
+      width: 100%;
+    }
+
+    .faq-item summary {
+      padding: 1.2rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--bakery-accent);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item details[open] summary::after {
+      content: '−';
+      color: var(--crochet-accent);
+    }
+
+    .faq-content {
+      padding: 0 1.5rem 1.3rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+    }
+
+    .faq-content ul {
+      margin-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .faq-content li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Order Form */
+    .form-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--cream);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--bakery-accent);
+      background: #FFF;
+    }
+
+    /* Payment Badges */
+    .payment-methods {
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .payment-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .payment-badges-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      user-select: none;
+    }
+
+    .badge-venmo {
+      background-color: #EBF4FC;
+      color: #008CFF;
+      border-color: #D0E5FA;
+    }
+
+    .badge-cashapp {
+      background-color: #EBF9EE;
+      color: #00D632;
+      border-color: #D2F2D7;
+    }
+
+    .badge-paypal {
+      background-color: #EEF4FA;
+      color: #003087;
+      border-color: #D4E3F3;
+    }
+
+    .badge-cash {
+      background-color: #F5EFEB;
+      color: var(--bakery-accent);
+      border-color: var(--border-color);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: var(--bakery-accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Floating Mobile Order Bar */
+    .mobile-sticky-order {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .nav-links { display: none; }
+      .form-section { padding: 1.5rem; }
+
+      .mobile-sticky-order {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(250, 247, 242, 0.95);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid var(--border-color);
+        padding: 0.75rem 1rem;
+        z-index: 999;
+        box-shadow: 0 -4px 12px rgba(43, 33, 24, 0.08);
+      }
+
+      .mobile-sticky-order .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem;
+        font-size: 1rem;
+        border-radius: 30px;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(194, 125, 56, 0.3);
+      }
+
+      footer {
+        padding-bottom: 5.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav>
+    <a href="#" class="brand">Mom Ba's Organized Chaos</a>
+    <div class="nav-links">
+      <a href="#bakes">Home Bakery</a>
+      <a href="#crochet">Handmade Crochet</a>
+      <a href="#gallery">Recent Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#order">Preorder / Custom Request</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <span class="hero-badge">Preorder Only • Baked Fresh for You</span>
+    <h1>Fresh Home Bakes & Cozy Handcrafted Crochet</h1>
+    <p>Small-batch artisan bread, sweet baked treats, and custom crocheted plushies and accessories made to bring joy and comfort.</p>
+    <div class="hero-buttons">
+      <a href="#bakes" class="btn">Browse Baked Goods</a>
+      <a href="#crochet" class="btn btn-secondary">Browse Crochet</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Schedule & Preorder Info -->
+    <section class="schedule-banner" id="info">
+      <h3>Fresh Bake Schedule & Order Information</h3>
+      <p>All items are created in small batches to maintain maximum freshness and quality.</p>
+      <ul>
+        <li><strong>Bake Days:</strong> Sundays & Wednesdays (Local Pickup & Delivery available).</li>
+        <li><strong>Preorder Window:</strong> Please submit bakery orders at least 24–48 hours before bake days.</li>
+        <li><strong>Custom Crochet:</strong> Made-to-order turnaround varies by piece size and detail (typically 1–2 weeks).</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 1: BAKED GOODS -->
+    <div class="section-header" id="bakes">
+      <h2 class="section-title">🥖 Fresh Baked Goods</h2>
+      <p class="section-sub">Scratch-made artisan loaves, rolls, and seasonal sweet treats.</p>
+    </div>
+    
+    <div class="grid">
+      <!-- Bakery Item 1 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Rosemary Artisan Bread ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Artisan Loaf</span>
+          <h3 class="card-title">Rosemary Artisan Bread</h3>
+          <p class="card-desc">Golden crisp crust with a tender crumb, infused with fresh fragrant rosemary and sea salt.</p>
+          <div class="card-footer">
+            <span class="price">$8.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bakery Item 2 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Classic Sourdough ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Artisan Loaf</span>
+          <h3 class="card-title">Classic Country Sourdough</h3>
+          <p class="card-desc">Slow-fermented traditional sourdough loaf with rich flavor, open crumb, and blistered crust.</p>
+          <div class="card-footer">
+            <span class="price">$9.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bakery Item 3 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Cinnamon Rolls ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Sweet Bakes</span>
+          <h3 class="card-title">Glazed Cinnamon Rolls</h3>
+          <p class="card-desc">Soft, pillowy swirl rolls packed with brown sugar cinnamon filling and topped with rich glaze (Pack of 4).</p>
+          <div class="card-footer">
+            <span class="price">$12.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bakery Item 4 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Seasonal Muffins / Scones ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Pastries</span>
+          <h3 class="card-title">Seasonal Muffins & Scones</h3>
+          <p class="card-desc">Freshly baked rotating fruit and specialty flavor batches made weekly with simple ingredients.</p>
+          <div class="card-footer">
+            <span class="price">$3.50 ea</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bakery Item 5 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Fresh Baked Cookies ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Cookies</span>
+          <h3 class="card-title">Gourmet Cookie Batch</h3>
+          <p class="card-desc">Chewy, golden scratch-made cookies available in half-dozen and full-dozen assortments.</p>
+          <div class="card-footer">
+            <span class="price">$14.00 / dozen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bakery Item 6 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Custom Bake Request ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Custom Request</span>
+          <h3 class="card-title">Custom Loaves & Event Bakes</h3>
+          <p class="card-desc">Special order savory focaccias, dinner rolls, or celebration treats tailored to your gathering.</p>
+          <div class="card-footer">
+            <span class="price">Varies</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- SECTION 2: CROCHET ITEMS -->
+    <div class="section-header" id="crochet">
+      <h2 class="section-title">🧶 Handcrafted Crochet</h2>
+      <p class="section-sub">Stitched with care—custom amigurumi plushies, cozy wearables, and home accents.</p>
+    </div>
+
+    <div class="grid">
+      <!-- Crochet Item 1 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Amigurumi Plushies ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-crochet">Amigurumi</span>
+          <h3 class="card-title">Custom Amigurumi Plushies</h3>
+          <p class="card-desc">Cute, durable stuffed animals and character creations made with premium soft yarn.</p>
+          <div class="card-footer">
+            <span class="price">From $18.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Crochet Item 2 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Chunky Yarn Beanie ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-crochet">Wearables</span>
+          <h3 class="card-title">Chunky Ribbed Beanies</h3>
+          <p class="card-desc">Cozy, stretch-fit hats available in adult and child sizes with or without faux-fur pom-poms.</p>
+          <div class="card-footer">
+            <span class="price">$22.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Crochet Item 3 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Handmade Scarf ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-crochet">Wearables</span>
+          <h3 class="card-title">Textured Infinity Scarves</h3>
+          <p class="card-desc">Ultra-soft, warm wrap scarves crafted in your choice of solid colors or earthy variegated blends.</p>
+          <div class="card-footer">
+            <span class="price">$28.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Crochet Item 4 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Cotton Dishcloth Sets ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-crochet">Home & Kitchen</span>
+          <h3 class="card-title">100% Cotton Dishcloth Sets</h3>
+          <p class="card-desc">Eco-friendly, durable, machine-washable textured washcloths and dish scrubbing sets (Set of 3).</p>
+          <div class="card-footer">
+            <span class="price">$12.00 / set</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Crochet Item 5 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Handcrafted Blanket ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-crochet">Home & Baby</span>
+          <h3 class="card-title">Cozy Throws & Baby Blankets</h3>
+          <p class="card-desc">Heirloom-quality blankets stitched in customizable sizes, textures, and palettes.</p>
+          <div class="card-footer">
+            <span class="price">From $45.00</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Crochet Item 6 -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <span>[ Photo: Custom Crochet Request ]</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-crochet">Custom Order</span>
+          <h3 class="card-title">Custom Character / Project</h3>
+          <p class="card-desc">Have a specific design, pop-culture figure, or gift idea in mind? Let's bring it to life.</p>
+          <div class="card-footer">
+            <span class="price">Custom Quote</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- SECTION 3: RECENT WORK GALLERY -->
+    <div class="section-header" id="gallery">
+      <h2 class="section-title">📸 Recent Custom Creations</h2>
+      <p class="section-sub">A peek at recent custom amigurumi requests, special loaf bakes, and made-to-order gifts.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Custom Plush ]</div>
+        <div class="gallery-caption">Custom Amigurumi Plush</div>
+      </div>
+      <div class="gallery-item">
+        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Herb Focaccia ]</div>
+        <div class="gallery-caption">Garlic & Herb Focaccia</div>
+      </div>
+      <div class="gallery-item">
+        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Beanie Set ]</div>
+        <div class="gallery-caption">Custom Colorway Beanie Set</div>
+      </div>
+      <div class="gallery-item">
+        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Cinnamon Rolls Tray ]</div>
+        <div class="gallery-caption">Sunday Bake Cinnamon Rolls</div>
+      </div>
+      <div class="gallery-item">
+        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Baby Blanket ]</div>
+        <div class="gallery-caption">Heirloom Baby Blanket</div>
+      </div>
+      <div class="gallery-item">
+        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Sourdough Crumb ]</div>
+        <div class="gallery-caption">Classic Sourdough Crumb</div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: TESTIMONIALS -->
+    <div class="section-header" id="reviews">
+      <h2 class="section-title">💬 What Customers Are Saying</h2>
+      <p class="section-sub">Kind words from neighbors, loaf lovers, and custom plush recipients.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "The Rosemary Artisan loaf was still warm when I picked it up on Sunday. Incredible crust, soft inside, and it didn't last 24 hours in our house!"
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div class="author-info">
+            <h4>Sarah M.</h4>
+            <span>Rosemary Loaf & Pastries</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "I ordered a custom amigurumi character for my daughter's birthday and was blown away by the detail. The stitching is tight and durable—she sleeps with it every night."
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar crochet-theme">DL</div>
+          <div class="author-info">
+            <h4>David L.</h4>
+            <span>Custom Amigurumi Plush</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Best country sourdough around! I also picked up a chunky ribbed beanie last fall and it is easily the warmest, softest hat I own."
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">ER</div>
+          <div class="author-info">
+            <h4>Emily R.</h4>
+            <span>Sourdough & Ribbed Beanie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: FAQ ACCORDION -->
+    <div class="section-header" id="faq" style="text-align: center;">
+      <h2 class="section-title" style="justify-content: center;">❓ Frequently Asked Questions</h2>
+      <p class="section-sub">Helpful details about order pickups, ingredients, and crochet care.</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <details>
+          <summary>How does local pickup and scheduling work?</summary>
+          <div class="faq-content">
+            Breads and treats are baked fresh on <strong>Sundays and Wednesdays</strong>. Once your order request is confirmed, you will receive an email or text with the pickup window and address. Please place orders 24–48 hours ahead so dough fermentation and prep can be scheduled properly.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>What are your allergen and ingredient practices?</summary>
+          <div class="faq-content">
+            All baked goods are produced in a home kitchen. While we maintain strict cleanliness and can accommodate dairy-free requests on select loaves and items, our kitchen also processes wheat, eggs, dairy, and nuts. If you have severe allergies, please list them clearly in your order notes.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>How do I care for and wash my crochet items?</summary>
+          <div class="faq-content">
+            <ul>
+              <li><strong>Amigurumi Plushies:</strong> Spot clean with a damp cloth and mild soap. Air dry thoroughly.</li>
+              <li><strong>Beanies & Scarves:</strong> Hand wash in cool water with gentle detergent, gently squeeze out excess water (do not wring), and lay flat to dry.</li>
+              <li><strong>Cotton Dishcloths:</strong> Machine washable in warm water with like colors; tumble dry low or air dry.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>How long do custom crochet orders take?</summary>
+          <div class="faq-content">
+            Most made-to-order plushies and accessories take <strong>1 to 2 weeks</strong> depending on size, complexity, and current order volume. If you need an item by a specific date or event, mention it in your submission form and we'll let you know if rush turnaround is possible.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item">
+        <details>
+          <summary>What payment methods do you accept?</summary>
+          <div class="faq-content">
+            We accept payment via <strong>Venmo, Cash App, PayPal, or exact cash upon pickup</strong>. Payment details and confirmation are shared once your order details and date are locked in.
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- SECTION 6: PREORDER / INQUIRY FORM -->
+    <section class="form-section" id="order">
+      <div class="section-header" style="text-align: center;">
+        <h2 class="section-title" style="justify-content: center;">Submit a Preorder or Inquiry</h2>
+        <p class="section-sub">Fill out the details below to request fresh bakes or a custom crochet piece.</p>
+      </div>
+
+      <!-- Web3Forms Integration: Replace YOUR_ACCESS_KEY_HERE with your key -->
+      <form action="https://formsubmit.co/mombasorganizedchaos@gmail.com" method="POST">
+  <!-- Optional: Disables the captcha screen for faster checkout -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Optional: Subject line in your inbox -->
+  <input type="hidden" name="_subject" value="New Order Request - Momba's Organized Chaos">
+
+        <div class="form-group">
+          <label for="name">Your Name *</label>
+          <input type="text" id="name" name="Customer Name" required placeholder="First and Last Name">
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Email or Phone Number *</label>
+          <input type="text" id="contact" name="Contact Info" required placeholder="name@example.com or (555) 000-0000">
+        </div>
+
+        <div class="form-group">
+          <label for="category">What would you like to order? *</label>
+          <select id="category" name="Order Category" required>
+            <option value="">Select an option...</option>
+            <option value="Sunday Bake Loaf / Treat">Sunday Bake Day Loaf / Pastry</option>
+            <option value="Wednesday Bake Loaf / Treat">Wednesday Bake Day Loaf / Pastry</option>
+            <option value="Custom Crochet Plush / Amigurumi">Custom Crochet Plush / Amigurumi</option>
+            <option value="Crochet Wearable / Home Item">Crochet Wearable / Home Accent</option>
+            <option value="Combination Bakery & Crochet">Both Baked Goods & Crochet</option>
+            <option value="Other / General Question">Other / General Question</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Order Details & Notes *</label>
+          <textarea id="details" name="Order Details" rows="4" required placeholder="List specific items, quantities, color preferences, or requested pickup/delivery date..."></textarea>
+        </div>
+
+        <!-- Anti-spam honeypot -->
+        <input type="checkbox" name="botcheck" style="display: none;">
+
+        <button type="submit" class="btn" style="width: 100%; font-size: 1rem; padding: 0.9rem;">Submit Order Request</button>
+
+        <!-- Accepted Payment Badges -->
+        <div class="payment-methods">
+          <div class="payment-title">Accepted Payment Methods for Pickup & Delivery</div>
+          <div class="payment-badges-grid">
+            <span class="badge badge-venmo">
+              <strong>V</strong> Venmo
+            </span>
+            <span class="badge badge-cashapp">
+              <strong>$</strong> Cash App
+            </span>
+            <span class="badge badge-paypal">
+              <strong>P</strong> PayPal
+            </span>
+            <span class="badge badge-cash">
+              💵 Cash on Pickup
+            </span>
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Momba's Organized Chaos. All rights reserved.</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="mailto:mombasorganizedchaos@gmail.com">mombasorganizedchaos@gmail.com</a> &bull; 
+      <a href="#order">Preorder Inquiry</a>
+    </p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-muted);">
+      Preorder Only • Small-Batch Home Bakery & Handcrafted Goods
+    </p>
+  </footer>
+
+  <!-- Floating Sticky Order Button for Mobile Screens -->
+  <div class="mobile-sticky-order">
+    <a href="#order" class="btn">🛒 Preorder & Custom Requests</a>
+  </div>
+
+</body>
+</html>
