@@ -166,6 +166,81 @@
       font-size: 1rem;
     }
 
+    /* Featured Special of the Week Banner */
+    .weekly-special-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF4EC 100%);
+      border: 2px solid var(--bakery-accent);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: 0 8px 28px rgba(194, 125, 56, 0.12);
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .special-img-box {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 250px;
+      box-shadow: var(--shadow);
+    }
+
+    .special-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .special-content-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .special-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--bakery-accent);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+
+    .special-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .special-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .special-footer {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .special-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--bakery-accent);
+    }
+
+    /* Grid Layouts */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -277,6 +352,121 @@
     .schedule-banner li {
       margin-bottom: 0.3rem;
     }
+
+    /* Shared Carousel Styles */
+    .carousel-section {
+      margin-bottom: 2.8rem;
+      position: relative;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--bakery-accent) #EFE8DE;
+    }
+
+    .crochet-track {
+      scrollbar-color: var(--crochet-accent) #EFE8DE;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel-track::-webkit-scrollbar-track {
+      background: #EFE8DE;
+      border-radius: 4px;
+    }
+
+    .carousel-track::-webkit-scrollbar-thumb {
+      background-color: var(--bakery-accent);
+      border-radius: 4px;
+    }
+
+    .crochet-track::-webkit-scrollbar-thumb {
+      background-color: var(--crochet-accent);
+    }
+
+    .carousel-slide {
+      flex: 0 0 calc(33.333% - 0.8rem);
+      min-width: 250px;
+      scroll-snap-align: start;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carousel-img-wrapper {
+      height: 240px;
+      overflow: hidden;
+      background: #EFE8DE;
+    }
+
+    .carousel-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-slide:hover .carousel-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .carousel-caption {
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      color: var(--text-dark);
+      background: #FFF;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-color);
+      color: var(--text-dark);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .carousel-btn:hover {
+      background: #FFF;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
 
     /* Gallery Grid */
     .gallery-grid {
@@ -588,6 +778,15 @@
       .hero h1 { font-size: 2.1rem; }
       .nav-links { display: none; }
       .form-section { padding: 1.5rem; }
+      
+      .weekly-special-card {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .carousel-slide {
+        flex: 0 0 80%;
+      }
 
       .mobile-sticky-order {
         display: block;
@@ -626,6 +825,7 @@
   <nav>
     <a href="#" class="brand">Momba's Organized Chaos</a>
     <div class="nav-links">
+      <a href="#special">Special of the Week</a>
       <a href="#bakes">Home Bakery</a>
       <a href="#crochet">Handmade Crochet</a>
       <a href="#gallery">Recent Work</a>
@@ -641,6 +841,7 @@
     <h1>Fresh Home Bakes & Cozy Handcrafted Crochet</h1>
     <p>Small-batch artisan bread, sweet baked treats, and custom crocheted plushies and accessories made to bring joy and comfort.</p>
     <div class="hero-buttons">
+      <a href="#special" class="btn">⭐ Special of the Week</a>
       <a href="#bakes" class="btn">Browse Baked Goods</a>
       <a href="#crochet" class="btn btn-secondary">Browse Crochet</a>
     </div>
@@ -662,91 +863,144 @@
     <!-- SECTION 1: BAKED GOODS -->
     <div class="section-header" id="bakes">
       <h2 class="section-title">🥖 Fresh Baked Goods</h2>
-      <p class="section-sub">Scratch-made artisan loaves and seasonal sweet treats.</p>
+      <p class="section-sub">Scratch-made artisan loaves, rolls, and seasonal sweet treats.</p>
     </div>
+
+    <!-- FEATURED: SPECIAL OF THE WEEK -->
+    <section class="weekly-special-card" id="special">
+      <div class="special-img-box">
+        <img src="pumpkinroll.jpg" alt="Featured Special of the Week">
+      </div>
+      <div class="special-content-box">
+        <span class="special-tag">⭐ Special of the Week</span>
+        <h3 class="special-title">Peach Cinnamon Rolls</h3>
+        <p class="special-desc">
+          Sweet, tender dough rolled with brown sugar, warm cinnamon, and a rich, juicy peach compote glaze. Baked fresh in limited Sunday and Wednesday batches!
+        </p>
+        <div class="special-footer">
+          <span class="special-price">$14.00 / 4-pack</span>
+          <a href="#order" class="btn">Preorder This Special</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROTATING BAKERY CAROUSEL -->
+    <section class="carousel-section">
+      <button class="carousel-btn prev" onclick="scrollCarousel('bakeryTrack', -1)" aria-label="Previous Slide">&#10094;</button>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="bakeryTrack">
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="rosemaryboule.jpg" alt="Rosemary Artisan Boule">
+            </div>
+            <div class="carousel-caption">Rosemary Artisan Boule</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="sweetwhite.jpg" alt="Sweet White Loaf">
+            </div>
+            <div class="carousel-caption">Sweet White Loaf</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="nutellaroll.jpg" alt="Nutella Cinnamon Rolls">
+            </div>
+            <div class="carousel-caption">Nutella Rolls</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="granola.jpg" alt="Granola">
+            </div>
+            <div class="carousel-caption">Small-Batch Granola</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel('bakeryTrack', 1)" aria-label="Next Slide">&#10095;</button>
+    </section>
     
+    <!-- BAKERY CARDS GRID -->
     <div class="grid">
-      <!-- Bakery Item 1 -->
+      <!-- Bakery Item 1: Rosemary Artisan Boule -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Rosemary Artisan Bread ]</span>
+          <img src="rosemaryboule.jpg" alt="Rosemary Artisan Boule">
         </div>
         <div class="card-body">
-          <span class="card-tag tag-baking">Artisan Loaf</span>
-          <h3 class="card-title">Rosemary Artisan Bread</h3>
+          <span class="card-tag tag-baking">Artisan Boule</span>
+          <h3 class="card-title">Rosemary Artisan Boule</h3>
           <p class="card-desc">Golden crisp crust with a tender crumb, infused with fresh fragrant rosemary and sea salt.</p>
           <div class="card-footer">
-            <span class="price">$8.00</span>
+            <span class="price">$8.00 / boule</span>
           </div>
         </div>
       </article>
 
-      <!-- Bakery Item 2 -->
-     <!-- Bakery Item: Sweet White Bread -->
-<article class="card">
-  <div class="card-img-wrapper">
-        <img src="sweetwhite.jpg" alt="Sweet White Bread Loaf">
-  </div>
-  <div class="card-body">
-    <span class="card-tag tag-baking">Classic Loaf</span>
-    <h3 class="card-title">Sweet White Bread</h3>
-    <p class="card-desc">Soft, pillowy sandwich bread with a touch of sweetness and golden-brown crust. Perfect for morning toast, French toast, or everyday sandwiches.</p>
-    <div class="card-footer">
-      <span class="price">$7.00 / loaf</span>
-    </div>
-  </div>
-</article>
-
-      <!-- Bakery Item 3 -->
+      <!-- Bakery Item 2: Sweet White Bread -->
       <article class="card">
-  <div class="card-img-wrapper">
-    <img src="pumpkinroll.jpg" alt="Pumpkin Spice Rolls">
-  </div>
-  <div class="card-body">
-    <span class="card-tag tag-baking">Seasonal Special</span>
-    <h3 class="card-title">Pumpkin Spice Rolls</h3>
-    <p class="card-desc">Soft, spiced pumpkin rolls filled with cinnamon brown sugar and topped with rich glaze.</p>
-    <div class="card-footer">
-      <span class="price">$14.00 / 4-pack</span>
-    </div>
-  </div>
-</article>
+        <div class="card-img-wrapper">
+          <img src="sweetwhite.jpg" alt="Sweet White Bread Loaf">
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Classic Loaf</span>
+          <h3 class="card-title">Sweet White Bread</h3>
+          <p class="card-desc">Soft, pillowy sandwich bread with a touch of sweetness and golden-brown crust. Perfect for morning toast, French toast, or everyday sandwiches.</p>
+          <div class="card-footer">
+            <span class="price">$7.00 / loaf</span>
+          </div>
+        </div>
+      </article>
 
-      <!-- Bakery Item 4 -->
-     <article class="card">
-  <div class="card-img-wrapper">
-    <img src="granola.jpg" alt="Homemade Artisan Granola">
-  </div>
-  <div class="card-body">
-    <span class="card-tag tag-baking">Small-Batch</span>
-    <h3 class="card-title">Homemade Artisan Granola</h3>
-    <p class="card-desc">Crunchy toasted rolled oats, nuts, seeds, and warm spices baked golden.</p>
-    
-    <!-- Price & Size breakdown -->
-    <ul style="list-style: none; padding: 0; margin: 0.5rem 0 1rem; font-size: 0.9rem; color: var(--text-dark);">
-      <li style="display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px dashed var(--border-color);">
-        <span>Small Bag (8 oz)</span>
-        <strong>$6.00</strong>
-      </li>
-      <li style="display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px dashed var(--border-color);">
-        <span>Large Bag (16 oz)</span>
-        <strong>$10.00</strong>
-      </li>
-      <li style="display: flex; justify-content: space-between; padding: 0.2rem 0;">
-        <span>Bulk Mason Jar (32 oz)</span>
-        <strong>$18.00</strong>
-      </li>
-    </ul>
+      <!-- Bakery Item 3: Pumpkin Spice Rolls -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <img src="pumpkinroll.jpg" alt="Pumpkin Spice Rolls">
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Seasonal Special</span>
+          <h3 class="card-title">Pumpkin Spice Rolls</h3>
+          <p class="card-desc">Soft, spiced pumpkin rolls filled with cinnamon brown sugar and topped with rich glaze.</p>
+          <div class="card-footer">
+            <span class="price">$14.00 / 4-pack</span>
+          </div>
+        </div>
+      </article>
 
-    <div class="card-footer">
-      <span class="price">$6.00 – $18.00</span>
-    </div>
-  </div>
-</article>
+      <!-- Bakery Item 4: Homemade Artisan Granola -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <img src="granola.jpg" alt="Homemade Artisan Granola">
+        </div>
+        <div class="card-body">
+          <span class="card-tag tag-baking">Small-Batch</span>
+          <h3 class="card-title">Homemade Artisan Granola</h3>
+          <p class="card-desc">Crunchy toasted rolled oats, nuts, seeds, and warm spices baked golden.</p>
+          
+          <ul style="list-style: none; padding: 0; margin: 0.5rem 0 1rem; font-size: 0.9rem; color: var(--text-dark);">
+            <li style="display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px dashed var(--border-color);">
+              <span>Small Bag (8 oz)</span>
+              <strong>$6.00</strong>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 0.2rem 0; border-bottom: 1px dashed var(--border-color);">
+              <span>Large Bag (16 oz)</span>
+              <strong>$10.00</strong>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 0.2rem 0;">
+              <span>Bulk Mason Jar (32 oz)</span>
+              <strong>$18.00</strong>
+            </li>
+          </ul>
+
+          <div class="card-footer">
+            <span class="price">$6.00 – $18.00</span>
+          </div>
+        </div>
+      </article>
+
       <!-- Bakery Item 5 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Fresh Baked Cookies ]</span>
+         <img src="choccookie.jpg" alt="Brown Butter Chocolate Chip">
+
         </div>
         <div class="card-body">
           <span class="card-tag tag-baking">Cookies</span>
@@ -774,12 +1028,59 @@
       </article>
     </div>
 
-    <!-- SECTION 2: CROCHET ITEMS -->
+    <!-- SECTION 2: CROCHET ITEMS & CAROUSEL -->
     <div class="section-header" id="crochet">
       <h2 class="section-title">🧶 Handcrafted Crochet</h2>
       <p class="section-sub">Stitched with care—custom plushies, cozy wearables, and home accents.</p>
     </div>
 
+    <!-- Interactive Crochet Carousel -->
+    <section class="carousel-section">
+      <button class="carousel-btn prev" onclick="scrollCarousel('crochetTrack', -1)" aria-label="Previous Slide">&#10094;</button>
+      <div class="carousel-wrapper">
+        <div class="carousel-track crochet-track" id="crochetTrack">
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="flowers.jpg" alt="Crochet Floral Creations">
+            </div>
+            <div class="carousel-caption">Crochet Flowers & Bouquets</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="watercreature.jpg" alt="Crochet Water Creature Plush">
+            </div>
+            <div class="carousel-caption">Sea Creature Amigurumi</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="animal.jpg" alt="Crochet Animal Plushie">
+            </div>
+            <div class="carousel-caption">Handmade Animal Plushies</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="babychick.jpg" alt="Crochet Bird Plush">
+            </div>
+            <div class="carousel-caption">Custom Bird Creations</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="bigdragon.jpg" alt="Crochet Dragon Plush">
+            </div>
+            <div class="carousel-caption">Fantasy Dragon Amigurumi</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-img-wrapper">
+              <img src="fbearbeanie.jpg" alt="Crochet Bear Beanie">
+            </div>
+            <div class="carousel-caption">Cozy Bear Ear Beanie</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel('crochetTrack', 1)" aria-label="Next Slide">&#10095;</button>
+    </section>
+
+    <!-- Crochet Catalog Grid -->
     <div class="grid">
       <!-- Crochet Item 1 -->
       <article class="card">
@@ -787,7 +1088,7 @@
           <span>[ Photo: Plushies ]</span>
         </div>
         <div class="card-body">
-          <span class="card-tag tag-crochet">Amigurumi</span>
+          <span class="card-tag tag-crochet">Plushie</span>
           <h3 class="card-title">Custom Plushies</h3>
           <p class="card-desc">Cute, durable stuffed animals and character creations made with premium soft yarn.</p>
           <div class="card-footer">
@@ -875,7 +1176,7 @@
     <!-- SECTION 3: RECENT WORK GALLERY -->
     <div class="section-header" id="gallery">
       <h2 class="section-title">📸 Recent Custom Creations</h2>
-      <p class="section-sub">A peek at recent custom amigurumi requests, special loaf bakes, and made-to-order gifts.</p>
+      <p class="section-sub">A peek at recent custom plushie requests, special loaf bakes, and made-to-order gifts.</p>
     </div>
 
     <div class="gallery-grid">
@@ -889,7 +1190,7 @@
       </div>
       <div class="gallery-item">
         <div class="card-img-wrapper" style="height: 100%;">[ Photo: Beanie Set ]</div>
-        <div class="gallery-caption">Custom Colorway Beanie Set</div>
+        <div class="gallery-caption">Custom Beanie</div>
       </div>
       <div class="gallery-item">
         <div class="card-img-wrapper" style="height: 100%;">[ Photo: Cinnamon Rolls Tray ]</div>
@@ -897,11 +1198,11 @@
       </div>
       <div class="gallery-item">
         <div class="card-img-wrapper" style="height: 100%;">[ Photo: Baby Blanket ]</div>
-        <div class="gallery-caption">Heirloom Baby Blanket</div>
+        <div class="gallery-caption">Keepsake Baby quilt</div>
       </div>
       <div class="gallery-item">
         <div class="card-img-wrapper" style="height: 100%;">[ Photo: Sourdough Crumb ]</div>
-        <div class="gallery-caption">Classic Sandwich Loafb</div>
+        <div class="gallery-caption">Classic Sandwich Loaf</div>
       </div>
     </div>
 
@@ -922,7 +1223,7 @@
         <div class="testimonial-author">
           <div class="author-avatar">SM</div>
           <div class="author-info">
-            <h4>Sarah M.</h4>
+            <h4>Veronica T.</h4>
             <span>Rosemary Loaf & Pastries</span>
           </div>
         </div>
@@ -932,14 +1233,14 @@
         <div>
           <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-quote">
-            "I ordered a custom amigurumi character for my nephews's birthday and loved the end result. The stitching is tight and durable—he has it displayed with his other animals."
+            "I ordered a Big Head Octopus for my nephew’s birthday, and he loved it! Super cute, well-made, and perfect for his collection."
           </p>
         </div>
         <div class="testimonial-author">
           <div class="author-avatar crochet-theme">DL</div>
           <div class="author-info">
             <h4>David L.</h4>
-            <span>Custom Amigurumi Plush</span>
+            <span>Custom Plushie</span>
           </div>
         </div>
       </div>
@@ -948,13 +1249,13 @@
         <div>
           <div class="testimonial-stars">★★★★★</div>
           <p class="testimonial-quote">
-            "Best Peach Cinnamon Roll ever! I also picked up a chunky ribbed beanie last fall and it is easily the warmest, softest hat I own."
+            "Best Peach Roll EVER! Tastes just like peach cobbler wrapped up in the perfect cinnamon roll!"
           </p>
         </div>
         <div class="testimonial-author">
           <div class="author-avatar">ER</div>
           <div class="author-info">
-            <h4>Emily R.</h4>
+            <h4>Angelo R.</h4>
             <span>Cinnamon Roll & Beanie</span>
           </div>
         </div>
@@ -991,7 +1292,7 @@
           <summary>How do I care for and wash my crochet items?</summary>
           <div class="faq-content">
             <ul>
-              <li><strong>Amigurumi Plushies:</strong> Spot clean with a damp cloth and mild soap. Air dry thoroughly.</li>
+              <li><strong>Plushies:</strong> Spot clean with a damp cloth and mild soap. Air dry thoroughly.</li>
               <li><strong>Beanies & Scarves:</strong> Hand wash in cool water with gentle detergent, gently squeeze out excess water (do not wring), and lay flat to dry.</li>
               <li><strong>Cotton Dishcloths:</strong> Machine washable in warm water with like colors; tumble dry low or air dry.</li>
             </ul>
@@ -1025,16 +1326,12 @@
         <p class="section-sub">Fill out the details below to request fresh bakes or a custom crochet piece.</p>
       </div>
 
-      <!-- Web3Forms Integration: Replace YOUR_ACCESS_KEY_HERE with your key -->
+      <!-- FormSubmit Integration -->
       <form action="https://formsubmit.co/mombasorganizedchaos@gmail.com" method="POST">
-  <!-- Prevents the missing page error and sends user right back to your live site -->
-  <input type="hidden" name="_next" value="https://raglandbakes.github.io/mombas-organized-chaos/">
-  
-  <!-- Disables captcha screen -->
-  <input type="hidden" name="_captcha" value="false">
-  
-  <!-- Email subject line -->
-  <input type="hidden" name="_subject" value="New Order Request - Momba's Organized Chaos">
+        <input type="hidden" name="_next" value="https://raglandbakes.github.io/mombas-organized-chaos/">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Order Request - Momba's Organized Chaos">
+        <input type="text" name="_honey" style="display:none">
 
         <div class="form-group">
           <label for="name">Your Name *</label>
@@ -1050,6 +1347,7 @@
           <label for="category">What would you like to order? *</label>
           <select id="category" name="Order Category" required>
             <option value="">Select an option...</option>
+            <option value="Weekly Special Item">⭐ Special of the Week (Peach Cinnamon Rolls)</option>
             <option value="Sunday Bake Loaf / Treat">Sunday Bake Day Loaf / Pastry</option>
             <option value="Wednesday Bake Loaf / Treat">Wednesday Bake Day Loaf / Pastry</option>
             <option value="Custom Crochet Plush / Amigurumi">Custom Crochet Plush / Amigurumi</option>
@@ -1063,9 +1361,6 @@
           <label for="details">Order Details & Notes *</label>
           <textarea id="details" name="Order Details" rows="4" required placeholder="List specific items, quantities, color preferences, or requested pickup/delivery date..."></textarea>
         </div>
-
-        <!-- Anti-spam honeypot -->
-        <input type="checkbox" name="botcheck" style="display: none;">
 
         <button type="submit" class="btn" style="width: 100%; font-size: 1rem; padding: 0.9rem;">Submit Order Request</button>
 
@@ -1108,6 +1403,17 @@
   <div class="mobile-sticky-order">
     <a href="#order" class="btn">🛒 Preorder & Custom Requests</a>
   </div>
+
+  <!-- Shared Carousel Navigation Script -->
+  <script>
+    function scrollCarousel(trackId, direction) {
+      const track = document.getElementById(trackId);
+      if (!track) return;
+      const slide = track.querySelector('.carousel-slide');
+      const slideWidth = slide.getBoundingClientRect().width + 19.2; // card width + gap
+      track.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
