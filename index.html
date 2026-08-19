@@ -183,14 +183,17 @@
     .special-img-box {
       border-radius: 10px;
       overflow: hidden;
-      height: 250px;
+      aspect-ratio: 4 / 3;
+      max-height: 280px;
       box-shadow: var(--shadow);
+      background-color: #EFE8DE;
     }
 
     .special-img-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .special-content-box {
@@ -265,7 +268,8 @@
     }
 
     .card-img-wrapper {
-      height: 200px;
+      width: 100%;
+      aspect-ratio: 4 / 3;
       background: #EFE8DE;
       display: flex;
       align-items: center;
@@ -280,6 +284,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-img-wrapper img {
+      transform: scale(1.04);
     }
 
     .card-body {
@@ -353,7 +363,7 @@
       margin-bottom: 0.3rem;
     }
 
-    /* Shared Carousel Styles */
+    /* Carousel Styles */
     .carousel-section {
       margin-bottom: 2.8rem;
       position: relative;
@@ -413,7 +423,8 @@
     }
 
     .carousel-img-wrapper {
-      height: 240px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       background: #EFE8DE;
     }
@@ -422,6 +433,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.3s ease;
     }
 
@@ -480,7 +492,7 @@
       position: relative;
       border-radius: var(--radius);
       overflow: hidden;
-      height: 220px;
+      aspect-ratio: 1 / 1;
       background: #EFE8DE;
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow);
@@ -965,7 +977,7 @@
         </div>
       </article>
 
-      <!-- Bakery Item 4: HomemadeGranola -->
+      <!-- Bakery Item 4: Homemade Granola -->
       <article class="card">
         <div class="card-img-wrapper">
           <img src="granola.jpg" alt="Homemade Granola">
@@ -996,10 +1008,10 @@
         </div>
       </article>
 
-      <!-- Bakery Item 5 -->
+      <!-- Bakery Item 5: Cookies -->
       <article class="card">
         <div class="card-img-wrapper">
-         <img src="choccookie.jpg" alt="Brown Butter Chocolate Chip">
+          <img src="choccookie.jpg" alt="Brown Butter Chocolate Chip">
         </div>
         <div class="card-body">
           <span class="card-tag tag-baking">Cookies</span>
@@ -1011,10 +1023,10 @@
         </div>
       </article>
 
-      <!-- Bakery Item 6 -->
+      <!-- Bakery Item 6: Custom Request -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Custom Bake Request ]</span>
+          <span style="font-weight: 500;">Custom Bake Request</span>
         </div>
         <div class="card-body">
           <span class="card-tag tag-baking">Custom Request</span>
@@ -1029,7 +1041,7 @@
 
     <!-- SECTION 2: CROCHET ITEMS & CAROUSEL -->
     <div class="section-header" id="crochet">
-      <h2 class="section-title"> Handcrafted Crochet</h2>
+      <h2 class="section-title">🧶 Handcrafted Crochet</h2>
       <p class="section-sub">Stitched with care—custom plushies, cozy wearables, and home accents.</p>
     </div>
 
@@ -1084,7 +1096,7 @@
       <!-- Crochet Item 1 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Plushies ]</span>
+          <img src="animal.jpg" alt="Handmade Plushies">
         </div>
         <div class="card-body">
           <span class="card-tag tag-crochet">Plushie</span>
@@ -1099,7 +1111,7 @@
       <!-- Crochet Item 2 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Chunky Yarn Beanie ]</span>
+          <img src="fbearbeanie.jpg" alt="Chunky Ribbed Beanie">
         </div>
         <div class="card-body">
           <span class="card-tag tag-crochet">Wearables</span>
@@ -1114,7 +1126,7 @@
       <!-- Crochet Item 3 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Handmade Scarf ]</span>
+          <span style="font-weight: 500;">Textured Scarves</span>
         </div>
         <div class="card-body">
           <span class="card-tag tag-crochet">Wearables</span>
@@ -1129,7 +1141,7 @@
       <!-- Crochet Item 4 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Cotton Dishcloth Sets ]</span>
+          <span style="font-weight: 500;">Dishcloth Sets</span>
         </div>
         <div class="card-body">
           <span class="card-tag tag-crochet">Home & Kitchen</span>
@@ -1144,7 +1156,7 @@
       <!-- Crochet Item 5 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Handcrafted Blanket ]</span>
+          <span style="font-weight: 500;">Cozy Throws</span>
         </div>
         <div class="card-body">
           <span class="card-tag tag-crochet">Home & Baby</span>
@@ -1159,7 +1171,7 @@
       <!-- Crochet Item 6 -->
       <article class="card">
         <div class="card-img-wrapper">
-          <span>[ Photo: Custom Crochet Request ]</span>
+          <span style="font-weight: 500;">Custom Design</span>
         </div>
         <div class="card-body">
           <span class="card-tag tag-crochet">Custom Order</span>
@@ -1180,27 +1192,27 @@
 
     <div class="gallery-grid">
       <div class="gallery-item">
-        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Custom Plush ]</div>
+        <img src="watercreature.jpg" alt="Custom Plushie">
         <div class="gallery-caption">Custom Plushie</div>
       </div>
       <div class="gallery-item">
-        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Herb Focaccia ]</div>
-        <div class="gallery-caption">Garlic & Herb Focaccia</div>
+        <img src="rosemaryboule.jpg" alt="Rosemary Artisan Loaf">
+        <div class="gallery-caption">Garlic & Herb Boule</div>
       </div>
       <div class="gallery-item">
-        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Beanie Set ]</div>
+        <img src="fbearbeanie.jpg" alt="Custom Beanie">
         <div class="gallery-caption">Custom Beanie</div>
       </div>
       <div class="gallery-item">
-        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Cinnamon Rolls Tray ]</div>
+        <img src="peachroll.jpg" alt="Cinnamon Rolls">
         <div class="gallery-caption">Sunday Bake Cinnamon Rolls</div>
       </div>
       <div class="gallery-item">
-        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Baby Blanket ]</div>
-        <div class="gallery-caption">Keepsake Baby quilt</div>
+        <img src="flowers.jpg" alt="Crochet Flowers">
+        <div class="gallery-caption">Crochet Floral Keepsake</div>
       </div>
       <div class="gallery-item">
-        <div class="card-img-wrapper" style="height: 100%;">[ Photo: Sourdough Crumb ]</div>
+        <img src="sweetwhite.jpg" alt="Classic Sandwich Loaf">
         <div class="gallery-caption">Classic Sandwich Loaf</div>
       </div>
     </div>
@@ -1220,7 +1232,7 @@
           </p>
         </div>
         <div class="testimonial-author">
-          <div class="author-avatar">SM</div>
+          <div class="author-avatar">VT</div>
           <div class="author-info">
             <h4>Veronica T.</h4>
             <span>Rosemary Loaf & Pastries</span>
@@ -1252,7 +1264,7 @@
           </p>
         </div>
         <div class="testimonial-author">
-          <div class="author-avatar">ER</div>
+          <div class="author-avatar">AR</div>
           <div class="author-info">
             <h4>Angelo R.</h4>
             <span>Cinnamon Roll & Beanie</span>
