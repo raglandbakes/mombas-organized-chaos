@@ -266,6 +266,27 @@
       gap: 1.5rem;
     }
 
+    /* Centered product grid for Breads & Loaves */
+    .product-grid-centered {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .product-grid-centered .product-card {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    /* 3-column Layout for Jams & Granola with Center Carousel */
+    .jams-granola-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
     .product-card {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -366,6 +387,120 @@
       background-color: var(--primary-hover);
     }
 
+    /* Cookie Carousel Layout */
+    .cookie-section-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 1.5rem;
+      align-items: stretch;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .carousel-container {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .carousel-view {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #f1eae2;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(45, 38, 33, 0.75);
+      color: #fff;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.82rem;
+      text-align: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      color: var(--primary);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+
+    .indicator-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .indicator-dot.active {
+      background: var(--accent);
+    }
+
     /* FAQ Section */
     .faq-container {
       max-width: 800px;
@@ -453,7 +588,6 @@
     }
 
     /* ---------------- CART & CHECKOUT STYLING ---------------- */
-    /* Floating Cart Button */
     .cart-float-btn {
       position: fixed;
       bottom: 25px;
@@ -492,7 +626,6 @@
       justify-content: center;
     }
 
-    /* Cart Overlay & Drawer */
     .cart-overlay {
       position: fixed;
       top: 0;
@@ -707,7 +840,16 @@
       gap: 1rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
+      .jams-granola-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cookie-section-layout {
+        grid-template-columns: 1fr;
+      }
       .form-row {
         grid-template-columns: 1fr;
       }
@@ -791,8 +933,7 @@
       <a href="#schedule">Bake Schedule</a>
       <a href="#cinnamon-rolls">Cinnamon Rolls</a>
       <a href="#cookies">Cookies</a>
-      <a href="#breads">Breads & Boules</a>
-      <a href="#sweet-breads">Sweet Breads</a>
+      <a href="#breads">Fresh Breads</a>
       <a href="#jams-granola">Jams & Granola</a>
       <a href="#handcrafts">Handmade Crafts</a>
       <a href="#faq">FAQ</a>
@@ -838,16 +979,18 @@
         </ul>
       </div>
 
-      <div class="info-box">
-        <h3>💳 Accepted Payment Methods</h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">We accept contactless pre-payments and payment upon pickup/delivery:</p>
-        <div class="payment-tags">
-          <span class="payment-tag">Venmo</span>
-          <span class="payment-tag">Cash App</span>
-          <span class="payment-tag">PayPal</span>
-          <span class="payment-tag">Cash on Pickup</span>
-        </div>
-      </div>
+    <div class="info-box" style="text-align: center;">
+  <h3 style="justify-content: center;">💳 Accepted Payment Methods</h3>
+  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+    We accept contactless pre-payments and payment upon pickup/delivery:
+  </p>
+  <div class="payment-tags" style="justify-content: center;">
+    <span class="payment-tag">Venmo</span>
+    <span class="payment-tag">Cash App</span>
+    <span class="payment-tag">PayPal</span>
+    <span class="payment-tag">Cash on Pickup</span>
+  </div>
+</div>
 
     </div>
 
@@ -895,33 +1038,31 @@
       </div>
 
       <div class="product-card">
-  <span class="card-badge">Gourmet Specialty</span>
-  <img src="espressoroll.jpg" alt="Gourmet Specialty Cinnamon Rolls" class="product-img">
-  <h3 class="product-title">Gourmet Specialty Cinnies</h3>
-  <p class="product-price">$15.00 – $42.00</p>
-  <p class="product-desc">Choose from rich Nutella, bold Espresso, Biscoff cookie butter, crushed Oreo cookies & cream, or buttery Sticky Pecan.</p>
-  <div class="product-actions">
-    <!-- Flavor Selection -->
-    <div class="select-wrapper">
-      <select class="item-flavor-select">
-        <option value="Nutella">Nutella Swirl</option>
-        <option value="Espresso">Bold Espresso</option>
-        <option value="Biscoff">Biscoff Cookie Butter</option>
-        <option value="Oreo">Cookies & Cream (Oreo)</option>
-        <option value="Sticky Pecan">Sticky Pecan</option>
-      </select>
-    </div>
-    <!-- Size / Quantity Selection -->
-    <div class="select-wrapper">
-      <select class="item-size-select">
-        <option value="15.00">4-Pack Box — $15.00</option>
-        <option value="22.00">Half Dozen (6) — $22.00</option>
-        <option value="40.00">Full Dozen (12) — $40.00</option>
-      </select>
-    </div>
-    <button class="btn-select add-to-cart-btn" data-title="Gourmet Specialty Cinnies">Add to Cart</button>
-  </div>
-</div>
+        <span class="card-badge">Gourmet Specialty</span>
+        <img src="espressoroll.jpg" alt="Gourmet Specialty Cinnamon Rolls" class="product-img">
+        <h3 class="product-title">Gourmet Specialty Cinnies</h3>
+        <p class="product-price">$15.00 – $42.00</p>
+        <p class="product-desc">Choose from rich Nutella, bold Espresso, Biscoff cookie butter, crushed Oreo cookies & cream, or buttery Sticky Pecan.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <select class="item-flavor-select">
+              <option value="Nutella">Nutella Swirl</option>
+              <option value="Espresso">Bold Espresso</option>
+              <option value="Biscoff">Biscoff Cookie Butter</option>
+              <option value="Oreo">Cookies & Cream (Oreo)</option>
+              <option value="Sticky Pecan">Sticky Pecan</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <select class="item-size-select">
+              <option value="15.00">4-Pack Box — $15.00</option>
+              <option value="22.00">Half Dozen (6) — $22.00</option>
+              <option value="40.00">Full Dozen (12) — $40.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Gourmet Specialty Cinnies">Add to Cart</button>
+        </div>
+      </div>
 
       <div class="product-card">
         <span class="card-badge">Specialty</span>
@@ -951,54 +1092,95 @@
 
     </div>
 
-    <!-- COOKIES -->
+    <!-- COOKIES (WITH CAROUSEL TO THE RIGHT) -->
     <div id="cookies" class="section-header">
       <h2>Gourmet Cookie Flavors</h2>
     </div>
-    <div class="product-grid">
-
+    
+    <div class="cookie-section-layout">
+      <!-- Cookie Ordering Card -->
       <div class="product-card">
-  <span class="card-badge">Gourmet Cookies</span>
-  <img src="images/gourmet-cookies.jpg" alt="Gourmet Cookies" class="product-img">
-  <h3 class="product-title">Gourmet Cookie Box</h3>
-  <p class="product-price">$14.00 – $30.00</p>
-  <p class="product-desc">Choose from Vanilla Latte, Snickerdoodle, Spiced Oatmeal Cream, Signature Brown Butter Chocolate Chip, or an Assorted Sampler.</p>
-  
-  <div class="product-actions">
-    <!-- Cookie Flavor Selection -->
-    <div class="select-wrapper">
-      <select class="item-flavor-select">
-        <option value="Brown Butter Chocolate Chip">Signature Brown Butter Choc Chip</option>
-        <option value="Vanilla Latte">Vanilla Latte (Espresso Glaze)</option>
-        <option value="Snickerdoodle">Classic Snickerdoodle</option>
-        <option value="Oatmeal Cream">Spiced Oatmeal Cream</option>
-        <option value="Assorted Variety">Assorted Mix / Sampler</option>
-      </select>
+        <span class="card-badge">Gourmet Cookies</span>
+        <img src="images/gourmet-cookies.jpg" alt="Gourmet Cookies" class="product-img">
+        <h3 class="product-title">Gourmet Cookie Box</h3>
+        <p class="product-price">$15.00 – $30.00</p>
+        <p class="product-desc">Choose from Vanilla Latte, Snickerdoodle, Spiced Oatmeal Cream, Signature Brown Butter Chocolate Chip, or an Assorted Sampler.</p>
+        
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <select class="item-flavor-select">
+              <option value="Brown Butter Chocolate Chip">Signature Brown Butter Choc Chip</option>
+              <option value="Vanilla Latte">Vanilla Latte (Espresso Glaze)</option>
+              <option value="Snickerdoodle">Classic Snickerdoodle</option>
+              <option value="Oatmeal Cream">Spiced Oatmeal Cream</option>
+              <option value="Assorted Variety">Assorted Mix / Sampler</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <select class="item-size-select">
+              <option value="15.00">Half Dozen (6) — $15.00</option>
+              <option value="28.00">Full Dozen (12) — $28.00</option>
+              <option value="30.00">Assorted Sampler Box (12) — $30.00</option>
+            </select>
+          </div>
+
+          <button class="btn-select add-to-cart-btn" data-title="Gourmet Cookie Box">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Cookie Picture Carousel -->
+      <div class="carousel-container">
+        <div>
+          <span class="card-badge">Cookie Gallery</span>
+          <h3 class="product-title" style="margin-bottom:0.75rem;">Fresh From the Oven</h3>
+        </div>
+        <div class="carousel-view" id="cookie-carousel">
+          <button class="carousel-btn prev" onclick="moveCookieSlide(-1)">&lsaquo;</button>
+          
+          <div class="carousel-slide active">
+            <img src="images/brown-butter-choc.jpg" alt="Brown Butter Chocolate Chip Cookie">
+            <div class="carousel-caption">Signature Brown Butter Chocolate Chip</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/vanilla-latte-cookie.jpg" alt="Vanilla Latte Cookie">
+            <div class="carousel-caption">Vanilla Latte with Espresso Glaze</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/snickerdoodle-cookie.jpg" alt="Snickerdoodle Cookie">
+            <div class="carousel-caption">Classic Cinnamon Sugar Snickerdoodle</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/oatmeal-cream-cookie.jpg" alt="Spiced Oatmeal Cream Cookie">
+            <div class="carousel-caption">Spiced Oatmeal Cream Pies</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/cookie-sampler-box.jpg" alt="Assorted Cookie Box">
+            <div class="carousel-caption">Assorted 12-Pack Sampler Box</div>
+          </div>
+
+          <button class="carousel-btn next" onclick="moveCookieSlide(1)">&rsaquo;</button>
+        </div>
+
+        <div class="carousel-indicators" id="cookie-indicators">
+          <span class="indicator-dot active" onclick="setCookieSlide(0)"></span>
+          <span class="indicator-dot" onclick="setCookieSlide(1)"></span>
+          <span class="indicator-dot" onclick="setCookieSlide(2)"></span>
+          <span class="indicator-dot" onclick="setCookieSlide(3)"></span>
+          <span class="indicator-dot" onclick="setCookieSlide(4)"></span>
+        </div>
+      </div>
     </div>
 
-    <!-- Size / Quantity Selection -->
-    <div class="select-wrapper">
-      <select class="item-size-select">
-        <option value="15.00">Half Dozen (6) — $15.00</option>
-        <option value="28.00">Full Dozen (12) — $28.00</option>
-        <option value="30.00">Assorted Sampler Box (12) — $30.00</option>
-      </select>
-    </div>
-
-    <button class="btn-select add-to-cart-btn" data-title="Gourmet Cookie Box">Add to Cart</button>
-  </div>
-</div>
-
-    </div>
-
-    <!-- BREADS & ARTISAN BOULES -->
+    <!-- CENTERED BREADS & LOAVES SECTION -->
     <div id="breads" class="section-header">
-      <h2>Loaves & Artisan Boules</h2>
+      <h2>Fresh Breads & Loaves</h2>
     </div>
-    <div class="product-grid">
+    <div class="product-grid-centered">
 
+      <!-- Standard Loaf -->
       <div class="product-card">
-        <span class="card-badge">Bread Loaf</span>
+        <span class="card-badge">Sandwich Loaf</span>
         <img src="artisan-bread.jpg" alt="Artisan Bread Loaves" class="product-img">
         <h3 class="product-title">Artisan Bread Loaf</h3>
         <p class="product-price">$7.00 – $19.00</p>
@@ -1022,6 +1204,7 @@
         </div>
       </div>
 
+      <!-- Artisan Boule -->
       <div class="product-card">
         <span class="card-badge">Artisan Boule</span>
         <img src="boule-bread.jpg" alt="Artisan Boules" class="product-img">
@@ -1049,66 +1232,36 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- SWEET BREADS -->
-    <div id="sweet-breads" class="section-header">
-      <h2>Mini Sweet Breads & Cakes</h2>
-    </div>
-    <div class="product-grid">
-
-      <div class="product-card">
-        <span class="card-badge">Mini Loaf</span>
-        <img src="images/mini-banana-bread.jpg" alt="Mini Banana Bread" class="product-img">
-        <h3 class="product-title">Mini Banana Bread</h3>
-        <p class="product-price">$6.00 / mini loaf</p>
-        <p class="product-desc">Moist, flavorful banana loaf baked to a golden brown.</p>
+      <!-- Combined Sweet Bread & Cake Card -->
+      <div class="product-card" id="sweet-bread-card">
+        <span class="card-badge">Sweet Loaf & Cake</span>
+        <img src="images/mini-banana-bread.jpg" alt="Sweet Bread Loaf" class="product-img" id="sweet-bread-img">
+        <h3 class="product-title">Sweet Breads & Loaf Cakes</h3>
+        <p class="product-price" id="sweet-bread-price-tag">$6.00 – $14.00</p>
+        <p class="product-desc" id="sweet-bread-desc">Moist, flavorful banana, zucchini, iced lemon loaf, or homemade holiday fruitcake.</p>
         <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Mini Banana Bread" data-price="6.00" data-option="Mini Loaf">Add to Cart ($6.00)</button>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <span class="card-badge">Mini Loaf</span>
-        <img src="images/mini-zucchini-bread.jpg" alt="Mini Zucchini Bread" class="product-img">
-        <h3 class="product-title">Mini Zucchini Bread</h3>
-        <p class="product-price">$6.00 / mini loaf</p>
-        <p class="product-desc">Spiced garden zucchini bread, incredibly moist and rich.</p>
-        <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Mini Zucchini Bread" data-price="6.00" data-option="Mini Loaf">Add to Cart ($6.00)</button>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <span class="card-badge">Mini Loaf</span>
-        <img src="images/mini-lemon-loaf.jpg" alt="Mini Lemon Loaf" class="product-img">
-        <h3 class="product-title">Mini Lemon Loaf</h3>
-        <p class="product-price">$6.50 / mini loaf</p>
-        <p class="product-desc">Bright, citrusy quick bread drizzled with tangy lemon glaze.</p>
-        <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Mini Lemon Loaf" data-price="6.50" data-option="Mini Loaf">Add to Cart ($6.50)</button>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <span class="card-badge">Specialty Cake</span>
-        <img src="images/fruitcake.jpg" alt="Fruitcake" class="product-img">
-        <h3 class="product-title">Not Your Traditional Fruitcake</h3>
-        <p class="product-price">$14.00 / loaf</p>
-        <p class="product-desc">Moist, homemade fruitcake packed with real fruit and warm holiday flavor.</p>
-        <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Not Your Traditional Fruitcake" data-price="14.00" data-option="Full Loaf">Add to Cart ($14.00)</button>
+          <div class="select-wrapper">
+            <select class="item-flavor-select" id="sweet-bread-select" onchange="updateSweetBreadDetails(this)">
+              <option value="Mini Banana Bread" data-price="6.00" data-img="images/mini-banana-bread.jpg" data-desc="Moist, flavorful banana loaf baked to a golden brown.">Banana (Mini Loaf) — $6.00</option>
+              <option value="Mini Zucchini Bread" data-price="6.00" data-img="images/mini-zucchini-bread.jpg" data-desc="Spiced garden zucchini bread, incredibly moist and rich.">Zucchini (Mini Loaf) — $6.00</option>
+              <option value="Mini Lemon Loaf" data-price="6.50" data-img="images/mini-lemon-loaf.jpg" data-desc="Bright, citrusy quick bread drizzled with tangy lemon glaze.">Lemon Glaze (Mini Loaf) — $6.50</option>
+              <option value="Holiday Fruitcake" data-price="14.00" data-img="images/fruitcake.jpg" data-desc="Moist, homemade fruitcake packed with real fruit and warm holiday flavor (NOT your traditional fruitcake!).">Fruitcake (NOT your traditional Fruitcake) — $14.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" id="sweet-bread-btn" data-title="Sweet Breads & Loaf Cakes" data-price="6.00" data-option="Banana (Mini Loaf)">Add to Cart ($6.00)</button>
         </div>
       </div>
 
     </div>
 
-    <!-- JAMS & GRANOLA -->
+    <!-- JAMS & GRANOLA WITH CENTER CAROUSEL -->
     <div id="jams-granola" class="section-header">
       <h2>Small-Batch Jams & Granola</h2>
     </div>
-    <div class="product-grid">
+    
+    <div class="jams-granola-grid">
 
+      <!-- 1. Gourmet Fruit Jam Card -->
       <div class="product-card">
         <span class="card-badge">Artisan Jam</span>
         <img src="images/gourmet-jams.jpg" alt="Gourmet Fruit Jams" class="product-img">
@@ -1129,6 +1282,44 @@
         </div>
       </div>
 
+      <!-- 2. Jams & Granola Gallery Carousel (Between Cards) -->
+      <div class="carousel-container">
+        <div>
+          <span class="card-badge">Pantry Spotlight</span>
+          <h3 class="product-title" style="margin-bottom:0.75rem;">Small-Batch Specialties</h3>
+        </div>
+        <div class="carousel-view" id="jam-carousel">
+          <button class="carousel-btn prev" onclick="moveJamSlide(-1)">&lsaquo;</button>
+          
+          <div class="carousel-slide active">
+            <img src="images/gourmet-jams.jpg" alt="Handmade Preserves">
+            <div class="carousel-caption">Small-Batch Fruit Preserves</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/strawberry-jam.jpg" alt="Strawberry Kiwi Jam">
+            <div class="carousel-caption">Strawberry & Strawberry-Kiwi Jam</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="granola.jpg" alt="Honey Baked Granola">
+            <div class="carousel-caption">Honey-Toasted Oats & Fruit Granola</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/jam-gift-set.jpg" alt="Jam Gift Trio">
+            <div class="carousel-caption">3-Jar Artisan Jam Gift Box</div>
+          </div>
+
+          <button class="carousel-btn next" onclick="moveJamSlide(1)">&rsaquo;</button>
+        </div>
+
+        <div class="carousel-indicators" id="jam-indicators">
+          <span class="indicator-dot active" onclick="setJamSlide(0)"></span>
+          <span class="indicator-dot" onclick="setJamSlide(1)"></span>
+          <span class="indicator-dot" onclick="setJamSlide(2)"></span>
+          <span class="indicator-dot" onclick="setJamSlide(3)"></span>
+        </div>
+      </div>
+
+      <!-- 3. Custom Batch Granola Card -->
       <div class="product-card">
         <span class="card-badge">Handmade Granola</span>
         <img src="granola.jpg" alt="Custom Batch Granola" class="product-img">
@@ -1156,70 +1347,124 @@
     </div>
     <div class="product-grid">
 
-      <div class="product-card">
-        <span class="card-badge">Custom Crochet</span>
-        <img src="chicabeanie.jpg" alt="Character Beanies" class="product-img">
-        <h3 class="product-title">Character Beanies</h3>
-        <p class="product-price">Starting at $25.00</p>
-        <p class="product-desc">Custom-made themed and character beanies made to size.</p>
-        <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Character Beanie" data-price="25.00" data-option="Custom Beanie Base">Add to Cart ($25.00)</button>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <span class="card-badge">Crochet</span>
-        <img src="scrapchunkbeanie.jpg" alt="Chunky Beanies" class="product-img">
-        <h3 class="product-title">Chunky Beanies</h3>
-        <p class="product-price">$20.00</p>
-        <p class="product-desc">Cozy, thick textured knit beanies in multiple colors with optional pom.</p>
-        <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Chunky Beanie" data-price="20.00" data-option="Standard Size">Add to Cart ($20.00)</button>
-        </div>
-      </div>
+     <div class="product-card">
+  <span class="card-badge">Custom Crochet</span>
+  <img src="chicabeanie.jpg" alt="Character and Regular Beanies" class="product-img">
+  <h3 class="product-title">Handmade Beanies</h3>
+  <p class="product-price">$20.00 – $25.00</p>
+  <p class="product-desc">Custom-made regular solid/striped beanies or themed character beanies made to size.</p>
+  <div class="product-actions">
+    <div class="select-wrapper">
+      <select class="item-size-select">
+        <option value="25.00">Character / Themed Beanie — $25.00</option>
+        <option value="20.00">Standard Regular Beanie — $20.00</option>
+      </select>
+    </div>
+    <button class="btn-select add-to-cart-btn" data-title="Handmade Beanie">Add to Cart</button>
+  </div>
+</div>
 
       <div class="product-card">
         <span class="card-badge">Amigurumi</span>
         <img src="bigdragon.jpg" alt="Crochet Plushies" class="product-img">
         <h3 class="product-title">Crochet Plushies</h3>
         <p class="product-price">$18.00 – $35.00</p>
-        <p class="product-desc">Handmade squishy plush toys and collectible character friends.</p>
+        <p class="product-desc">Handmade plush toys and collectible character friends.</p>
         <div class="product-actions">
           <button class="btn-select add-to-cart-btn" data-title="Crochet Plushie" data-price="25.00" data-option="Medium Plush">Add to Cart ($25.00)</button>
         </div>
       </div>
 
       <div class="product-card">
-        <span class="card-badge">Sewn Goods</span>
-        <img src="images/tote-bags.jpg" alt="Handcrafted Fabric Tote Bags" class="product-img">
+        <span class="card-badge">Handcrafter Goods</span>
+        <img src="images/tote-bags.jpg" alt="Handcrafted Tote Bags" class="product-img">
         <h3 class="product-title">Handcrafted Tote Bag</h3>
         <p class="product-price">$18.00</p>
-        <p class="product-desc">Durable, stylish handmade fabric tote bags for groceries, books, and yarn.</p>
+        <p class="product-desc">Durable, stylish handmade yarn or fabric tote bags for groceries, books, and yarn.</p>
         <div class="product-actions">
-          <button class="btn-select add-to-cart-btn" data-title="Handcrafted Fabric Tote Bag" data-price="18.00" data-option="Standard Tote">Add to Cart ($18.00)</button>
+          <button class="btn-select add-to-cart-btn" data-title="Handcrafted Tote Bag" data-price="18.00" data-option="Standard Tote">Add to Cart ($18.00)</button>
         </div>
       </div>
-      
+      <div class="product-card">
+  <span class="card-badge">Holiday & Seasonal</span>
+  <img src="bigdragon.jpg" alt="Holiday Handmade Crafts & Plushies" class="product-img">
+  <h3 class="product-title">Holiday Handmade Collection</h3>
+  <p class="product-price">$18.00 – $35.00</p>
+  <p class="product-desc">Festive handmade plushies, amigurumi, and themed crochet items for holidays and special occasions.</p>
+  <div class="product-actions">
+    <!-- Holiday Theme Selection -->
+    <div class="select-wrapper">
+      <select class="item-flavor-select">
+        <option value="Christmas Theme">Christmas / Winter Holiday</option>
+        <option value="Thanksgiving Theme">Thanksgiving / Fall Harvest</option>
+        <option value="Valentines Theme">Valentine's Day / Love & Hearts</option>
+        <option value="Seasonal Theme">Seasonal / Special Occasion</option>
+      </select>
     </div>
+    <!-- Size / Style Selection -->
+    <div class="select-wrapper">
+      <select class="item-size-select">
+        <option value="18.00">Small / Mini Item — $18.00</option>
+        <option value="25.00">Medium Plush / Decor — $25.00</option>
+        <option value="35.00">Large / Deluxe Plush — $35.00</option>
+      </select>
+    </div>
+    <button class="btn-select add-to-cart-btn" data-title="Holiday Handmade Collection">Add to Cart</button>
+   </div>
+ </div>
 
-    <!-- FAQ SECTION -->
-    <div id="faq" class="section-header">
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div class="faq-container">
-      <details>
-        <summary>How far in advance do I need to place my order?</summary>
-        <p>Because everything is made fresh from scratch, our order deadlines are <strong>Fridays by 5:00 PM for Sunday bakes</strong> and <strong>Mondays by 5:00 PM for Wednesday bakes</strong>.</p>
-      </details>
-      <details>
-        <summary>Can I pick up my order at the upcoming farmer's market?</summary>
-        <p>Yes! Simply select "Market Pickup" at checkout and let us know which market date you'll be attending.</p>
-      </details>
-      <details>
-        <summary>How do custom crochet/sewn orders work?</summary>
-        <p>You can add handcraft items to your cart and leave character/color preferences in the notes field during checkout!</p>
-      </details>
-    </div>
+</div> <!-- End of Handmade Crafts Grid -->
+
+<!-- FAQ SECTION HEADER & CONTAINER (WITH SPACING) -->
+<div id="faq" class="section-header" style="margin-top: 5.5rem;">
+  <h2>Frequently Asked Questions</h2>
+</div>
+
+<div class="faq-container" style="margin-top: 1.5rem;">
+
+
+   <!-- FAQ SECTION -->
+<div class="faq-container">
+
+  <!-- 1. Allergens & Dietary Preferences -->
+  <details>
+    <summary>Do you accommodate food allergies or dietary preferences?</summary>
+    <p>Items are prepared in a home kitchen that handles common allergens such as wheat/gluten, nuts, eggs, and dairy. Please specify any allergy concerns, dietary preferences, or ingredient requests in the order notes during checkout.</p>
+  </details>
+
+  <!-- 2. Pickup Options (Market & Porch Pickup Combined) -->
+  <details>
+    <summary>How do Porch Pickup and Market Pickup work?</summary>
+    <p><strong>Porch Pickup:</strong> Available on scheduled bake days (Sundays and Wednesdays) starting after 5:00 PM. You'll receive a confirmation with pickup details once your order is fresh and ready.<br>
+    <strong>Market / Pop-Up Pickup:</strong> Simply select "Market Pickup" at checkout and let us know which event or date you'll be attending. Preordering guarantees your favorites won't sell out before you get there!</p>
+  </details>
+
+  <!-- 3. Reheating & Storage Tips -->
+  <details>
+    <summary>How should I store and reheat my cinnamon rolls and breads?</summary>
+    <p><strong>Cinnamon Rolls:</strong> Best enjoyed fresh! To reheat, pop a single roll in the microwave for 15–20 seconds to bring back that warm, gooey texture. They can also be frozen for up to 1 month.<br>
+    <strong>Artisan Breads & Boules:</strong> Keep wrapped at room temperature for up to 3–4 days. To restore a crusty exterior, warm in a 350°F oven for 5–8 minutes.</p>
+  </details>
+
+  <!-- 4. Payment Timing -->
+  <details>
+    <summary>When and how do I pay for my preorder?</summary>
+    <p>We accept contactless electronic payments (Venmo, Cash App, or PayPal) prior to fulfillment, as well as cash on pickup/delivery. Payment details are confirmed after your order is received.</p>
+  </details>
+
+  <!-- 5. Custom Crochet & Handcrafts Turnaround -->
+  <details>
+    <summary>How do custom crochet/sewn orders and sizing work?</summary>
+    <p>You can select your base item and leave your preferred colors, sizing (child, teen, adult), or character requests in the notes field at checkout. Custom craft turnaround times may vary depending on item complexity and current order volume.</p>
+  </details>
+
+  <!-- 6. Cancellation Policy -->
+  <details>
+    <summary>What if I need to change or cancel my order?</summary>
+    <p>Please reach out as soon as possible! Changes or cancellations must be made prior to the order cutoff window so ingredients and dough prep can be adjusted accordingly.</p>
+  </details>
+
+</div>
 
     <!-- REVIEWS SECTION -->
     <div id="reviews" class="section-header">
@@ -1375,7 +1620,7 @@
     <p>&copy; 2026 Momba's Organized Chaos • Preorder Only • Baked Fresh for You</p>
   </footer>
 
-  <!-- JAVASCRIPT: CART LOGIC -->
+  <!-- JAVASCRIPT: CART & CAROUSEL LOGIC -->
   <script>
     let cart = [];
 
@@ -1394,6 +1639,87 @@
     const finalOrderItems = document.getElementById('final-order-items');
     const finalOrderTotal = document.getElementById('final-order-total');
 
+    /* Cookie Carousel Controller */
+    let currentCookieSlide = 0;
+    const cookieSlides = document.querySelectorAll('#cookie-carousel .carousel-slide');
+    const cookieDots = document.querySelectorAll('#cookie-indicators .indicator-dot');
+
+    function showCookieSlide(index) {
+      if (index >= cookieSlides.length) currentCookieSlide = 0;
+      else if (index < 0) currentCookieSlide = cookieSlides.length - 1;
+      else currentCookieSlide = index;
+
+      cookieSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentCookieSlide);
+      });
+      cookieDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentCookieSlide);
+      });
+    }
+
+    function moveCookieSlide(step) {
+      showCookieSlide(currentCookieSlide + step);
+    }
+
+    function setCookieSlide(index) {
+      showCookieSlide(index);
+    }
+
+    // Auto-advance cookie carousel
+    setInterval(() => {
+      moveCookieSlide(1);
+    }, 5000);
+
+    /* Jam & Granola Carousel Controller */
+    let currentJamSlide = 0;
+    const jamSlides = document.querySelectorAll('#jam-carousel .carousel-slide');
+    const jamDots = document.querySelectorAll('#jam-indicators .indicator-dot');
+
+    function showJamSlide(index) {
+      if (index >= jamSlides.length) currentJamSlide = 0;
+      else if (index < 0) currentJamSlide = jamSlides.length - 1;
+      else currentJamSlide = index;
+
+      jamSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentJamSlide);
+      });
+      jamDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentJamSlide);
+      });
+    }
+
+    function moveJamSlide(step) {
+      showJamSlide(currentJamSlide + step);
+    }
+
+    function setJamSlide(index) {
+      showJamSlide(index);
+    }
+
+    // Auto-advance jam carousel
+    setInterval(() => {
+      moveJamSlide(1);
+    }, 5500);
+
+    /* Sweet Bread Dynamic Card Controller */
+    function updateSweetBreadDetails(select) {
+      const selectedOption = select.options[select.selectedIndex];
+      const price = parseFloat(selectedOption.getAttribute('data-price'));
+      const img = selectedOption.getAttribute('data-img');
+      const desc = selectedOption.getAttribute('data-desc');
+      const title = selectedOption.text.split('—')[0].trim();
+
+      document.getElementById('sweet-bread-img').src = img;
+      document.getElementById('sweet-bread-price-tag').textContent = `$${price.toFixed(2)}`;
+      document.getElementById('sweet-bread-desc').textContent = desc;
+
+      const btn = document.getElementById('sweet-bread-btn');
+      btn.setAttribute('data-price', price.toFixed(2));
+      btn.setAttribute('data-option', title);
+      btn.textContent = `Add to Cart ($${price.toFixed(2)})`;
+    }
+
+    /* Cart Management */
     function toggleCart(show) {
       if (show) {
         cartOverlay.classList.add('active');
@@ -1502,21 +1828,29 @@
         let option = btn.getAttribute('data-option') || '';
 
         // Check for size/quantity dropdowns
-        const sizeSelect = card.querySelector('.item-size-select');
+        const sizeSelect = card?.querySelector('.item-size-select');
         if (sizeSelect) {
           price = parseFloat(sizeSelect.value);
           const sizeText = sizeSelect.options[sizeSelect.selectedIndex].text.split('—')[0].trim();
           option = sizeText;
         }
 
-        // Check for flavor dropdowns
-        const flavorSelect = card.querySelector('.item-flavor-select');
-        if (flavorSelect) {
+        // Check for standard flavor dropdowns
+        const flavorSelect = card?.querySelector('.item-flavor-select');
+        if (flavorSelect && flavorSelect.id !== 'sweet-bread-select') {
           const flavorText = flavorSelect.options[flavorSelect.selectedIndex].text;
           option = option ? `${flavorText}, ${option}` : flavorText;
           if (flavorText.includes('Gift Set') && !sizeSelect) {
             price = 22.00;
           }
+        }
+
+        // Specific handling for Sweet Breads card
+        if (btn.id === 'sweet-bread-btn') {
+          const sweetSelect = document.getElementById('sweet-bread-select');
+          const chosen = sweetSelect.options[sweetSelect.selectedIndex];
+          price = parseFloat(chosen.getAttribute('data-price'));
+          option = chosen.text.split('—')[0].trim();
         }
 
         // Check if item exists in cart
