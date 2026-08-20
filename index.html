@@ -690,7 +690,7 @@
           <span class="payment-tag">Venmo</span>
           <span class="payment-tag">Paypal</span>
           <span class="payment-tag">Cash App</span>
-          <span class="payment-tag">Cash on Pickup/Delivery(Exact change appreciated)</span>
+          <span class="payment-tag">Cash on Pickup/Delivery (Exact change appreciated)</span>
         </div>
       </div>
 
@@ -710,7 +710,7 @@
         <p class="product-desc">Our classic signature cinnamon roll loaded with brown sugar, spice, and house icing.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="og-cinny-size">
               <option>Single Roll — $4.00</option>
               <option>4-Pack Box — $14.00</option>
               <option>Half Dozen (6) — $20.00</option>
@@ -729,7 +729,7 @@
         <p class="product-desc">Warm pumpkin spice swirl with silky cream glaze.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="pumpkin-cinny-size">
               <option>4-Pack Box — $15.00</option>
               <option>Half Dozen (6) — $22.00</option>
               <option>Full Dozen (12) — $40.00</option>
@@ -747,7 +747,7 @@
         <p class="product-desc">Infused with rich espresso for a bold coffeehouse flavor.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="espresso-cinny-size">
               <option>4-Pack Box — $15.00</option>
               <option>Half Dozen (6) — $22.00</option>
               <option>Full Dozen (12) — $40.00</option>
@@ -762,10 +762,10 @@
         <img src="nutellaroll.jpg" alt="Nutella Cinny" class="product-img">
         <h3 class="product-title">Nutella Cinny</h3>
         <p class="product-price">$15.00 – $40.00</p>
-        <p class="product-desc">Rich, gooey Nutella swirled into soft, fluffy cinnamon rolls and topped with signature glaze..</p>
+        <p class="product-desc">Rich, gooey Nutella swirled into soft, fluffy cinnamon rolls and topped with signature glaze.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="nutella-cinny-size">
               <option>4-Pack Box — $15.00</option>
               <option>Half Dozen (6) — $22.00</option>
               <option>Full Dozen (12) — $40.00</option>
@@ -777,13 +777,13 @@
 
       <div class="product-card">
         <span class="card-badge">Specialty</span>
-        <img src="biscoff.jpg" alt=Cookie Butter Cinny="product-img">
+        <img src="biscoff.jpg" alt="Cookie Butter Cinny" class="product-img">
         <h3 class="product-title">Cookie Butter Cinny</h3>
         <p class="product-price">$15.00 – $40.00</p>
-        <p class="product-desc">Soft, fluffy rolls swirled with rich Biscoff cookie butter and topped with signature glaze..</p>
+        <p class="product-desc">Soft, fluffy rolls swirled with rich Biscoff cookie butter and topped with signature glaze.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="biscoff-cinny-size">
               <option>4-Pack Box — $15.00</option>
               <option>Half Dozen (6) — $22.00</option>
               <option>Full Dozen (12) — $40.00</option>
@@ -801,7 +801,7 @@
         <p class="product-desc">Topped with toasted, buttery pecans and cinnamon glaze.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="pecan-cinny-size">
               <option>4-Pack Box — $16.00</option>
               <option>Half Dozen (6) — $23.00</option>
               <option>Full Dozen (12) — $42.00</option>
@@ -811,38 +811,38 @@
         </div>
       </div>
 
-     <div class="product-card">
-  <span class="card-badge">Specialty</span>
-  <img src="images/fruit-cinnies.jpg" alt="Fruit Specialty Cinnies" class="product-img">
-  <h3 class="product-title">Fruit Specialty Cinnies</h3>
-  <p class="product-price">$15.00 – $40.00</p>
-  <p class="product-desc">Choose from spiced caramelized apple, sweet blueberry, peach cobbler, or fresh strawberry glaze.</p>
-  
-  <div class="product-actions">
-    <!-- Flavor Selection -->
-    <div class="select-wrapper">
-      <select name="flavor">
-        <option value="" disabled selected>Select Flavor</option>
-        <option value="apple-pie">Apple Pie</option>
-        <option value="blueberry">Blueberry</option>
-        <option value="strawberry">Strawberry</option>
-        <option value="peach cobblery">Peach Cobbler</option>
-      </select>
-    </div>
+      <div class="product-card">
+        <span class="card-badge">Specialty</span>
+        <img src="images/fruit-cinnies.jpg" alt="Fruit Specialty Cinnies" class="product-img">
+        <h3 class="product-title">Fruit Specialty Cinnies</h3>
+        <p class="product-price">$15.00 – $40.00</p>
+        <p class="product-desc">Choose from spiced caramelized apple, sweet blueberry, peach cobbler, or fresh strawberry glaze.</p>
+        
+        <div class="product-actions">
+          <!-- Flavor Selection -->
+          <div class="select-wrapper">
+            <select name="flavor">
+              <option value="" disabled selected>Select Flavor</option>
+              <option value="apple-pie">Apple Pie</option>
+              <option value="blueberry">Blueberry</option>
+              <option value="strawberry">Strawberry</option>
+              <option value="peach-cobbler">Peach Cobbler</option>
+            </select>
+          </div>
 
-    <!-- Size / Quantity Selection -->
-    <div class="select-wrapper">
-      <select name="size">
-        <option value="" disabled selected>Select Size</option>
-        <option value="4-pack">4-Pack Box — $15.00</option>
-        <option value="half-dozen">Half Dozen (6) — $22.00</option>
-        <option value="full-dozen">Full Dozen (12) — $40.00</option>
-      </select>
-    </div>
+          <!-- Size / Quantity Selection -->
+          <div class="select-wrapper">
+            <select name="size">
+              <option value="" disabled selected>Select Size</option>
+              <option value="4-pack">4-Pack Box — $15.00</option>
+              <option value="half-dozen">Half Dozen (6) — $22.00</option>
+              <option value="full-dozen">Full Dozen (12) — $40.00</option>
+            </select>
+          </div>
 
-    <a href="#order" class="btn-select">Select for Order</a>
-  </div>
-</div>
+          <a href="#order" class="btn-select">Select for Order</a>
+        </div>
+      </div>
 
     </div>
 
@@ -860,7 +860,7 @@
         <p class="product-desc">Golden crisp edges, soft center, rich chocolate chunks & nutty brown butter.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="bb-choc-chip-size">
               <option>Half Dozen (6) — $15.00</option>
               <option>Full Dozen (12) — $28.00</option>
               <option>Assorted Sampler Box (12) — $30.00</option>
@@ -878,7 +878,7 @@
         <p class="product-desc">Buttery, thick cinnamon-sugar dusted perfection.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="snickerdoodle-size">
               <option>Half Dozen (6) — $14.00</option>
               <option>Full Dozen (12) — $26.00</option>
               <option>Assorted Sampler Box (12) — $30.00</option>
@@ -896,7 +896,7 @@
         <p class="product-desc">Soft baked spiced oatmeal cookies with fluffy cream filling.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="oatmeal-cream-size">
               <option>4-Pack Sandwiches — $16.00</option>
               <option>Half Dozen (6) — $22.00</option>
               <option>Full Dozen (12) — $40.00</option>
@@ -914,7 +914,7 @@
         <p class="product-desc">Espresso-dusted gourmet cookie with a creamy vanilla glaze.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="vanilla-latte-size">
               <option>Half Dozen (6) — $15.00</option>
               <option>Full Dozen (12) — $28.00</option>
               <option>Assorted Sampler Box (12) — $30.00</option>
@@ -933,70 +933,70 @@
     <div class="product-grid">
 
       <div class="product-card">
-  <span class="card-badge">Bread Loaf</span>
-  <img src="artisan-bread.jpg" alt="Artisan Bread Loaves" class="product-img">
-  <h3 class="product-title">Artisan Bread Loaves</h3>
-  <p class="product-price">$7.00 – $19.00</p>
-  <p class="product-desc">Freshly baked, soft, and tender loaves available individually or as a 3-loaf flight.</p>
-  
-  <div class="product-actions">
-    <!-- Bread Variety Selection -->
-    <div class="select-wrapper">
-      <select name="bread-type">
-        <option value="" disabled selected>Select Variety</option>
-        <option value="sweet-white">Sweet White Bread</option>
-        <option value="wheat">Wheat Bread</option>
-        <option value="cinnamon-swirl">Cinnamon Swirl Bread</option>
-        <option value="bread-flight">Bread Flight (1 of Each Variety)</option>
-      </select>
-    </div>
+        <span class="card-badge">Bread Loaf</span>
+        <img src="artisan-bread.jpg" alt="Artisan Bread Loaves" class="product-img">
+        <h3 class="product-title">Artisan Bread Loaves</h3>
+        <p class="product-price">$7.00 – $19.00</p>
+        <p class="product-desc">Freshly baked, soft, and tender loaves available individually or as a 3-loaf flight.</p>
+        
+        <div class="product-actions">
+          <!-- Bread Variety Selection -->
+          <div class="select-wrapper">
+            <select name="bread-type">
+              <option value="" disabled selected>Select Variety</option>
+              <option value="sweet-white">Sweet White Bread</option>
+              <option value="wheat">Wheat Bread</option>
+              <option value="cinnamon-swirl">Cinnamon Swirl Bread</option>
+              <option value="bread-flight">Bread Flight (1 of Each Variety)</option>
+            </select>
+          </div>
 
-    <!-- Quantity / Option Selection -->
-    <div class="select-wrapper">
-      <select name="order-option">
-        <option value="" disabled selected>Select Size / Option</option>
-        <option value="single-loaf">Single Loaf — $7.00</option>
-        <option value="bread-flight">Bread Flight (3 Loaves) — $19.00</option>
-      </select>
-    </div>
+          <!-- Quantity / Option Selection -->
+          <div class="select-wrapper">
+            <select name="order-option">
+              <option value="" disabled selected>Select Size / Option</option>
+              <option value="single-loaf">Single Loaf — $7.00</option>
+              <option value="bread-flight">Bread Flight (3 Loaves) — $19.00</option>
+            </select>
+          </div>
 
-    <a href="#order" class="btn-select">Select for Order</a>
-  </div>
-</div>
+          <a href="#order" class="btn-select">Select for Order</a>
+        </div>
+      </div>
 
-   <div class="product-card">
-  <span class="card-badge">Artisan Boule</span>
-  <img src="boule-bread.jpg" alt="Artisan Boules" class="product-img">
-  <h3 class="product-title">Artisan Boule Loaves</h3>
-  <p class="product-price">$8.00 – $22.00</p>
-  <p class="product-desc">Crusty artisan round loaves, available individually or as a 3-boule sampler flight.</p>
-  
-  <div class="product-actions">
-    <!-- Flavor Selection -->
-    <div class="select-wrapper">
-      <select name="boule-flavor">
-        <option value="" disabled selected>Select Flavor</option>
-        <option value="plain">Plain</option>
-        <option value="italian-herb">Italian Herb</option>
-        <option value="jalapeno-cheddar">Jalapeño Cheddar</option>
-        <option value="roasted-garlic-rosemary">Roasted Garlic & Rosemary</option>
-        <option value="rosemary">Rosemary</option>
-        <option value="boule-flight">Boule Flight (Pick Any 3)</option>
-      </select>
-    </div>
+      <div class="product-card">
+        <span class="card-badge">Artisan Boule</span>
+        <img src="boule-bread.jpg" alt="Artisan Boules" class="product-img">
+        <h3 class="product-title">Artisan Boule Loaves</h3>
+        <p class="product-price">$8.00 – $22.00</p>
+        <p class="product-desc">Crusty artisan round loaves, available individually or as a 3-boule sampler flight.</p>
+        
+        <div class="product-actions">
+          <!-- Flavor Selection -->
+          <div class="select-wrapper">
+            <select name="boule-flavor">
+              <option value="" disabled selected>Select Flavor</option>
+              <option value="plain">Plain</option>
+              <option value="italian-herb">Italian Herb</option>
+              <option value="jalapeno-cheddar">Jalapeño Cheddar</option>
+              <option value="roasted-garlic-rosemary">Roasted Garlic & Rosemary</option>
+              <option value="rosemary">Rosemary</option>
+              <option value="boule-flight">Boule Flight (Pick Any 3)</option>
+            </select>
+          </div>
 
-    <!-- Size / Option Selection -->
-    <div class="select-wrapper">
-      <select name="order-option">
-        <option value="" disabled selected>Select Size / Option</option>
-        <option value="single-boule">Single Boule — $8.00</option>
-        <option value="boule-flight">Boule Flight (3 Boules) — $22.00</option>
-      </select>
-    </div>
+          <!-- Size / Option Selection -->
+          <div class="select-wrapper">
+            <select name="order-option">
+              <option value="" disabled selected>Select Size / Option</option>
+              <option value="single-boule">Single Boule — $8.00</option>
+              <option value="boule-flight">Boule Flight (3 Boules) — $22.00</option>
+            </select>
+          </div>
 
-    <a href="#order" class="btn-select">Select for Order</a>
-  </div>
-</div>
+          <a href="#order" class="btn-select">Select for Order</a>
+        </div>
+      </div>
 
     </div>
 
@@ -1044,7 +1044,7 @@
         <img src="images/fruitcake.jpg" alt="NOT your Traditional Fruitcake" class="product-img">
         <h3 class="product-title">Not Your Traditional Fruitcake</h3>
         <p class="product-price">$14.00 / loaf</p>
-        <p class="product-desc">Moist, homemade fruitcake packed with real fruit and warm holiday flavor..</p>
+        <p class="product-desc">Moist, homemade fruitcake packed with real fruit and warm holiday flavor.</p>
         <div class="product-actions">
           <a href="#order" class="btn-select">Select Fruitcake ($14.00)</a>
         </div>
@@ -1066,7 +1066,7 @@
         <p class="product-desc">Handmade, small-batch preserves made with simple, fresh ingredients.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="jam-flavor">
               <option>Strawberry Jam (8 oz) — $8.00</option>
               <option>Strawberry-Kiwi Jam (8 oz) — $8.00</option>
               <option>Blueberry Lemon Jam (8 oz) — $8.00</option>
@@ -1086,7 +1086,7 @@
         <p class="product-desc">Golden toasted oats honey-baked to perfection. Choose your favorite blend.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <select>
+            <select name="granola-blend">
               <option>With Fruit & With Nuts (12 oz) — $10.00</option>
               <option>With Fruit & No Nuts (12 oz) — $9.50</option>
               <option>No Fruit & With Nuts (12 oz) — $9.50</option>
@@ -1103,7 +1103,7 @@
     <div id="handcrafts" class="section-header">
       <h2>Handmade Crochet, Knits & Sewn Goods</h2>
     </div>
-    <div class="product-grid">
+    <div id="crochet-gallery" class="product-grid">
 
       <div class="product-card">
         <span class="card-badge">Custom Crochet</span>
@@ -1182,20 +1182,20 @@
         </div>
       </div>
       
-  <div class="product-card">
+      <div class="product-card">
         <span class="card-badge">Handmade Goods</span>
         <img src="images/custommade.jpg" alt="Custom Commission Work" class="product-img">
         <h3 class="product-title">Custom Work</h3>
-        <p class="product-price">varies</p>
+        <p class="product-price">Varies</p>
         <p class="product-desc">Have an idea? We can craft it!</p>
         <div class="product-actions">
           <a href="#order" class="btn-select">Custom Work</a>
         </div>
       </div>
       
-      </div>
+    </div>
 
-      <!-- 4. FAQ SECTION -->
+    <!-- 4. FAQ SECTION -->
     <div id="faq" class="section-header">
       <h2>Frequently Asked Questions</h2>
     </div>
