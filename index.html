@@ -279,14 +279,6 @@
       max-width: 320px;
     }
 
-    /* 3-column Layout for Jams & Granola with Center Carousel */
-    .jams-granola-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr 1fr;
-      gap: 1.5rem;
-      align-items: stretch;
-    }
-
     .product-card {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -840,12 +832,6 @@
       gap: 1rem;
     }
 
-    @media (max-width: 900px) {
-      .jams-granola-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     @media (max-width: 768px) {
       .cookie-section-layout {
         grid-template-columns: 1fr;
@@ -934,7 +920,6 @@
       <a href="#cinnamon-rolls">Cinnamon Rolls</a>
       <a href="#cookies">Cookies</a>
       <a href="#breads">Fresh Breads</a>
-      <a href="#jams-granola">Jams & Granola</a>
       <a href="#handcrafts">Handmade Crafts</a>
       <a href="#faq">FAQ</a>
       <a href="#reviews">Reviews</a>
@@ -942,16 +927,16 @@
   </header>
 
   <div class="container">
-   
+    
     <!-- COMMUNITY MISSION SECTION -->
-  <div style="background: var(--accent-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2.5rem auto; max-width: 800px; text-align: center;">
-  <h3 style="font-family: 'Playfair Display', serif; color: var(--primary); font-size: 1.3rem; margin-bottom: 0.4rem;">
-    💛 Baking with Purpose • Crafting for Change
-  </h3>
-  <p style="color: var(--text); font-size: 0.95rem; line-height: 1.5; margin: 0;">
-    Every order makes a difference. A portion of every purchase directly supports local single mothers and domestic violence survivors as they rebuild, heal, and start fresh.
-  </p>
-</div>
+    <div style="background: var(--accent-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2.5rem auto; max-width: 800px; text-align: center;">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--primary); font-size: 1.3rem; margin-bottom: 0.4rem;">
+        💛 Baking with Purpose • Crafting for Change
+      </h3>
+      <p style="color: var(--text); font-size: 0.95rem; line-height: 1.5; margin: 0;">
+        Every order makes a difference. A portion of every purchase directly supports local single mothers and domestic violence survivors as they rebuild, heal, and start fresh.
+      </p>
+    </div>
 
     <!-- 2. SPECIAL OF THE WEEK -->
     <div class="special-card">
@@ -989,18 +974,18 @@
         </ul>
       </div>
 
-    <div class="info-box" style="text-align: center;">
-  <h3 style="justify-content: center;">💳 Accepted Payment Methods</h3>
-  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-    We accept contactless pre-payments and payment upon pickup/delivery:
-  </p>
-  <div class="payment-tags" style="justify-content: center;">
-    <span class="payment-tag">Venmo</span>
-    <span class="payment-tag">Cash App</span>
-    <span class="payment-tag">PayPal</span>
-    <span class="payment-tag">Cash on Pickup</span>
-  </div>
-</div>
+      <div class="info-box" style="text-align: center;">
+        <h3 style="justify-content: center;">💳 Accepted Payment Methods</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+          We accept contactless pre-payments and payment upon pickup/delivery:
+        </p>
+        <div class="payment-tags" style="justify-content: center;">
+          <span class="payment-tag">Venmo</span>
+          <span class="payment-tag">Cash App</span>
+          <span class="payment-tag">PayPal</span>
+          <span class="payment-tag">Cash on Pickup</span>
+        </div>
+      </div>
 
     </div>
 
@@ -1265,115 +1250,28 @@
 
     </div>
 
-    <!-- JAMS & GRANOLA WITH CENTER CAROUSEL -->
-    <div id="jams-granola" class="section-header">
-      <h2>Small-Batch Jams & Granola</h2>
-    </div>
-    
-    <div class="jams-granola-grid">
-
-      <!-- 1. Gourmet Fruit Jam Card -->
-      <div class="product-card">
-        <span class="card-badge">Artisan Jam</span>
-        <img src="images/gourmet-jams.jpg" alt="Gourmet Fruit Jams" class="product-img">
-        <h3 class="product-title">Gourmet Fruit Jam</h3>
-        <p class="product-price">$8.00 / jar</p>
-        <p class="product-desc">Handmade, small-batch preserves made with simple, fresh ingredients.</p>
-        <div class="product-actions">
-          <div class="select-wrapper">
-            <select class="item-flavor-select">
-              <option value="Strawberry Jam (8 oz)">Strawberry Jam (8 oz) — $8.00</option>
-              <option value="Strawberry-Kiwi Jam (8 oz)">Strawberry-Kiwi Jam (8 oz) — $8.00</option>
-              <option value="Blueberry Lemon Jam (8 oz)">Blueberry Lemon Jam (8 oz) — $8.00</option>
-              <option value="Apple Cinnamon Jam (8 oz)">Apple Cinnamon Jam (8 oz) — $8.00</option>
-              <option value="Jam Gift Set (3 Jars)">Jam Gift Set (Pick Any 3) — $22.00</option>
-            </select>
-          </div>
-          <button class="btn-select add-to-cart-btn" data-title="Gourmet Fruit Jam" data-price="8.00">Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- 2. Jams & Granola Gallery Carousel (Between Cards) -->
-      <div class="carousel-container">
-        <div>
-          <span class="card-badge">Pantry Spotlight</span>
-          <h3 class="product-title" style="margin-bottom:0.75rem;">Small-Batch Specialties</h3>
-        </div>
-        <div class="carousel-view" id="jam-carousel">
-          <button class="carousel-btn prev" onclick="moveJamSlide(-1)">&lsaquo;</button>
-          
-          <div class="carousel-slide active">
-            <img src="images/gourmet-jams.jpg" alt="Handmade Preserves">
-            <div class="carousel-caption">Small-Batch Fruit Preserves</div>
-          </div>
-          <div class="carousel-slide">
-            <img src="images/strawberry-jam.jpg" alt="Strawberry Kiwi Jam">
-            <div class="carousel-caption">Strawberry & Strawberry-Kiwi Jam</div>
-          </div>
-          <div class="carousel-slide">
-            <img src="granola.jpg" alt="Honey Baked Granola">
-            <div class="carousel-caption">Honey-Toasted Oats & Fruit Granola</div>
-          </div>
-          <div class="carousel-slide">
-            <img src="images/jam-gift-set.jpg" alt="Jam Gift Trio">
-            <div class="carousel-caption">3-Jar Artisan Jam Gift Box</div>
-          </div>
-
-          <button class="carousel-btn next" onclick="moveJamSlide(1)">&rsaquo;</button>
-        </div>
-
-        <div class="carousel-indicators" id="jam-indicators">
-          <span class="indicator-dot active" onclick="setJamSlide(0)"></span>
-          <span class="indicator-dot" onclick="setJamSlide(1)"></span>
-          <span class="indicator-dot" onclick="setJamSlide(2)"></span>
-          <span class="indicator-dot" onclick="setJamSlide(3)"></span>
-        </div>
-      </div>
-
-      <!-- 3. Custom Batch Granola Card -->
-      <div class="product-card">
-        <span class="card-badge">Handmade Granola</span>
-        <img src="granola.jpg" alt="Custom Batch Granola" class="product-img">
-        <h3 class="product-title">Custom Batch Granola</h3>
-        <p class="product-price">$9.00 – $10.00 / bag</p>
-        <p class="product-desc">Golden toasted oats honey-baked to perfection. Choose your favorite blend.</p>
-        <div class="product-actions">
-          <div class="select-wrapper">
-            <select class="item-size-select">
-              <option value="10.00">With Fruit & With Nuts (12 oz) — $10.00</option>
-              <option value="9.50">With Fruit & No Nuts (12 oz) — $9.50</option>
-              <option value="9.50">No Fruit & With Nuts (12 oz) — $9.50</option>
-              <option value="9.00">Plain (No Fruit & No Nuts) (12 oz) — $9.00</option>
-            </select>
-          </div>
-          <button class="btn-select add-to-cart-btn" data-title="Custom Batch Granola">Add to Cart</button>
-        </div>
-      </div>
-
-    </div>
-
     <!-- HANDMADE CROCHET & SEWN -->
     <div id="handcrafts" class="section-header">
       <h2>Handmade Crochet, Knits & Sewn Goods</h2>
     </div>
     <div class="product-grid">
 
-     <div class="product-card">
-  <span class="card-badge">Custom Crochet</span>
-  <img src="chicabeanie.jpg" alt="Character and Regular Beanies" class="product-img">
-  <h3 class="product-title">Handmade Beanies</h3>
-  <p class="product-price">$20.00 – $25.00</p>
-  <p class="product-desc">Custom-made regular solid/striped beanies or themed character beanies made to size.</p>
-  <div class="product-actions">
-    <div class="select-wrapper">
-      <select class="item-size-select">
-        <option value="25.00">Character / Themed Beanie — $25.00</option>
-        <option value="20.00">Standard Regular Beanie — $20.00</option>
-      </select>
-    </div>
-    <button class="btn-select add-to-cart-btn" data-title="Handmade Beanie">Add to Cart</button>
-  </div>
-</div>
+      <div class="product-card">
+        <span class="card-badge">Custom Crochet</span>
+        <img src="chicabeanie.jpg" alt="Character and Regular Beanies" class="product-img">
+        <h3 class="product-title">Handmade Beanies</h3>
+        <p class="product-price">$20.00 – $25.00</p>
+        <p class="product-desc">Custom-made regular solid/striped beanies or themed character beanies made to size.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <select class="item-size-select">
+              <option value="25.00">Character / Themed Beanie — $25.00</option>
+              <option value="20.00">Standard Regular Beanie — $20.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Handmade Beanie">Add to Cart</button>
+        </div>
+      </div>
 
       <div class="product-card">
         <span class="card-badge">Amigurumi</span>
@@ -1396,85 +1294,91 @@
           <button class="btn-select add-to-cart-btn" data-title="Handcrafted Tote Bag" data-price="18.00" data-option="Standard Tote">Add to Cart ($18.00)</button>
         </div>
       </div>
+      
       <div class="product-card">
-  <span class="card-badge">Holiday & Seasonal</span>
-  <img src="thanksgiving.jpg" alt="Holiday Handmade Crafts & Plushies" class="product-img">
-  <h3 class="product-title">Holiday Handmade Collection</h3>
-  <p class="product-price">$18.00 – $35.00</p>
-  <p class="product-desc">Festive handmade plushies, amigurumi, and themed crochet items for holidays and special occasions.</p>
-  <div class="product-actions">
-    <!-- Holiday Theme Selection -->
-    <div class="select-wrapper">
-      <select class="item-flavor-select">
-        <option value="Christmas Theme">Christmas / Winter Holiday</option>
-        <option value="Thanksgiving Theme">Thanksgiving / Fall Harvest</option>
-        <option value="Valentines Theme">Valentine's Day / Love & Hearts</option>
-        <option value="Seasonal Theme">Seasonal / Special Occasion</option>
-      </select>
+        <span class="card-badge">Holiday & Seasonal</span>
+        <img src="thanksgiving.jpg" alt="Holiday Handmade Crafts & Plushies" class="product-img">
+        <h3 class="product-title">Holiday Handmade Collection</h3>
+        <p class="product-price">$18.00 – $35.00</p>
+        <p class="product-desc">Festive handmade plushies, amigurumi, and themed crochet items for holidays and special occasions.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <select class="item-flavor-select">
+              <option value="Christmas Theme">Christmas / Winter Holiday</option>
+              <option value="Thanksgiving Theme">Thanksgiving / Fall Harvest</option>
+              <option value="Valentines Theme">Valentine's Day / Love & Hearts</option>
+              <option value="Seasonal Theme">Seasonal / Special Occasion</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <select class="item-size-select">
+              <option value="18.00">Small / Mini Item — $18.00</option>
+              <option value="25.00">Medium Plush / Decor — $25.00</option>
+              <option value="35.00">Large / Deluxe Plush — $35.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Holiday Handmade Collection">Add to Cart</button>
+        </div>
+      </div>
+
     </div>
-    <!-- Size / Style Selection -->
-    <div class="select-wrapper">
-      <select class="item-size-select">
-        <option value="18.00">Small / Mini Item — $18.00</option>
-        <option value="25.00">Medium Plush / Decor — $25.00</option>
-        <option value="35.00">Large / Deluxe Plush — $35.00</option>
-      </select>
+
+    <!-- 💛 THE & MORE PROJECT MISSION -->
+    <div style="background: var(--accent-soft); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: var(--radius); padding: 1.75rem; margin: 3.5rem auto 1.5rem; max-width: 850px; text-align: center; box-shadow: var(--shadow);">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--primary); font-size: 1.35rem; margin-bottom: 0.4rem;">
+        💛 Baking with Purpose • The & More Project
+      </h3>
+      <p style="color: var(--text); font-size: 0.95rem; line-height: 1.6; max-width: 700px; margin: 0 auto;">
+        Every order makes a difference. A portion of all proceeds directly supports <strong>The & More Project</strong>, a non-profit initiative dedicated to providing care, resources, and a fresh start for local single mothers and domestic violence survivors.
+      </p>
     </div>
-    <button class="btn-select add-to-cart-btn" data-title="Holiday Handmade Collection">Add to Cart</button>
-   </div>
- </div>
+  
+    <!-- FAQ SECTION HEADER & CONTAINER -->
+    <div id="faq" class="section-header" style="margin-top: 5.5rem;">
+      <h2>Frequently Asked Questions</h2>
+    </div>
 
-</div> <!-- End of Handmade Crafts Grid -->
+    <div class="faq-container" style="margin-top: 1.5rem;">
 
-<!-- FAQ SECTION HEADER & CONTAINER (WITH SPACING) -->
-<div id="faq" class="section-header" style="margin-top: 5.5rem;">
-  <h2>Frequently Asked Questions</h2>
-</div>
+      <!-- 1. Allergens & Dietary Preferences -->
+      <details>
+        <summary>Do you accommodate food allergies, dietary preferences, or sugar-free requests?</summary>
+        <p>Items are prepared in a home kitchen that handles common allergens such as wheat/gluten, nuts, eggs, and dairy. Sugar-free and Gluten-friendly options are available for select items upon request. Please specify any sugar-free requests, allergy concerns, dietary preferences, or ingredient modifications in the order notes during checkout.</p>
+      </details>
 
-<div class="faq-container" style="margin-top: 1.5rem;">
+      <!-- 2. Pickup Options -->
+      <details>
+        <summary>How do Porch Pickup and Market Pickup work?</summary>
+        <p><strong>Porch Pickup:</strong> Available on scheduled bake days (Sundays and Wednesdays) starting after 5:00 PM. You'll receive a confirmation with pickup details once your order is fresh and ready.<br>
+        <strong>Market / Pop-Up Pickup:</strong> Simply select "Market Pickup" at checkout and let us know which event or date you'll be attending. Preordering guarantees your favorites won't sell out before you get there!</p>
+      </details>
 
+      <!-- 3. Reheating & Storage Tips -->
+      <details>
+        <summary>How should I store and reheat my cinnamon rolls and breads?</summary>
+        <p><strong>Cinnamon Rolls:</strong> Best enjoyed fresh! To reheat, pop a single roll in the microwave for 15–20 seconds to bring back that warm, gooey texture. They can also be frozen for up to 1 month.<br>
+        <strong>Artisan Breads & Boules:</strong> Keep wrapped at room temperature for up to 3–4 days. To restore a crusty exterior, warm in a 350°F oven for 5–8 minutes.</p>
+      </details>
 
-   <!-- FAQ SECTION -->
-<div class="faq-container">
+      <!-- 4. Payment Timing -->
+      <details>
+        <summary>When and how do I pay for my preorder?</summary>
+        <p>We accept contactless electronic payments (Venmo, Cash App, or PayPal) prior to fulfillment, as well as cash on pickup/delivery. Payment details are confirmed after your order is received.</p>
+      </details>
 
-  <!-- 1. Allergens & Dietary Preferences -->
-  <details>
-    <summary>Do you accommodate food allergies, dietary preferences, or sugar-free requests?</summary>
-    <p>Items are prepared in a home kitchen that handles common allergens such as wheat/gluten, nuts, eggs, and dairy. Sugar-free and Gluten-friendly options are available for select items upon request. Please specify any sugar-free requests, allergy concerns, dietary preferences, or ingredient modifications in the order notes during checkout.</details>
+      <!-- 5. Custom Crochet & Handcrafts Turnaround -->
+      <details>
+        <summary>How do custom crochet/sewn orders and sizing work?</summary>
+        <p>You can select your base item and leave your preferred colors, sizing (child, teen, adult), or character requests in the notes field at checkout. Custom craft turnaround times may vary depending on item complexity and current order volume.</p>
+      </details>
 
-  <!-- 2. Pickup Options (Market & Porch Pickup Combined) -->
-  <details>
-    <summary>How do Porch Pickup and Market Pickup work?</summary>
-    <p><strong>Porch Pickup:</strong> Available on scheduled bake days (Sundays and Wednesdays) starting after 5:00 PM. You'll receive a confirmation with pickup details once your order is fresh and ready.<br>
-    <strong>Market / Pop-Up Pickup:</strong> Simply select "Market Pickup" at checkout and let us know which event or date you'll be attending. Preordering guarantees your favorites won't sell out before you get there!</p>
-  </details>
+      <!-- 6. Cancellation Policy -->
+      <details>
+        <summary>What if I need to change or cancel my order?</summary>
+        <p>Please reach out as soon as possible! Changes or cancellations must be made prior to the order cutoff window so ingredients and dough prep can be adjusted accordingly.</p>
+      </details>
 
-  <!-- 3. Reheating & Storage Tips -->
-  <details>
-    <summary>How should I store and reheat my cinnamon rolls and breads?</summary>
-    <p><strong>Cinnamon Rolls:</strong> Best enjoyed fresh! To reheat, pop a single roll in the microwave for 15–20 seconds to bring back that warm, gooey texture. They can also be frozen for up to 1 month.<br>
-    <strong>Artisan Breads & Boules:</strong> Keep wrapped at room temperature for up to 3–4 days. To restore a crusty exterior, warm in a 350°F oven for 5–8 minutes.</p>
-  </details>
-
-  <!-- 4. Payment Timing -->
-  <details>
-    <summary>When and how do I pay for my preorder?</summary>
-    <p>We accept contactless electronic payments (Venmo, Cash App, or PayPal) prior to fulfillment, as well as cash on pickup/delivery. Payment details are confirmed after your order is received.</p>
-  </details>
-
-  <!-- 5. Custom Crochet & Handcrafts Turnaround -->
-  <details>
-    <summary>How do custom crochet/sewn orders and sizing work?</summary>
-    <p>You can select your base item and leave your preferred colors, sizing (child, teen, adult), or character requests in the notes field at checkout. Custom craft turnaround times may vary depending on item complexity and current order volume.</p>
-  </details>
-
-  <!-- 6. Cancellation Policy -->
-  <details>
-    <summary>What if I need to change or cancel my order?</summary>
-    <p>Please reach out as soon as possible! Changes or cancellations must be made prior to the order cutoff window so ingredients and dough prep can be adjusted accordingly.</p>
-  </details>
-
-</div>
+    </div>
 
     <!-- REVIEWS SECTION -->
     <div id="reviews" class="section-header">
@@ -1633,7 +1537,7 @@
     </form>
   </div>
 
- <footer>
+  <footer>
     <p>&copy; 2026 Momba's Organized Chaos • Preorder Only • Baked Fresh for You</p>
     
     <p style="margin-top: 0.5rem; font-size: 0.85rem;">
@@ -1643,7 +1547,7 @@
       </a>
     </p>
 
-   <div style="margin-top: 0.6rem; font-size: 0.88rem; display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
+    <div style="margin-top: 0.6rem; font-size: 0.88rem; display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;">
       <a href="https://www.facebook.com/mombasorganizedchaos" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: none;">
         Follow on Facebook
       </a>
@@ -1707,37 +1611,6 @@
     setInterval(() => {
       moveCookieSlide(1);
     }, 5000);
-
-    /* Jam & Granola Carousel Controller */
-    let currentJamSlide = 0;
-    const jamSlides = document.querySelectorAll('#jam-carousel .carousel-slide');
-    const jamDots = document.querySelectorAll('#jam-indicators .indicator-dot');
-
-    function showJamSlide(index) {
-      if (index >= jamSlides.length) currentJamSlide = 0;
-      else if (index < 0) currentJamSlide = jamSlides.length - 1;
-      else currentJamSlide = index;
-
-      jamSlides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === currentJamSlide);
-      });
-      jamDots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentJamSlide);
-      });
-    }
-
-    function moveJamSlide(step) {
-      showJamSlide(currentJamSlide + step);
-    }
-
-    function setJamSlide(index) {
-      showJamSlide(index);
-    }
-
-    // Auto-advance jam carousel
-    setInterval(() => {
-      moveJamSlide(1);
-    }, 5500);
 
     /* Sweet Bread Dynamic Card Controller */
     function updateSweetBreadDetails(select) {
@@ -1878,9 +1751,6 @@
         if (flavorSelect && flavorSelect.id !== 'sweet-bread-select') {
           const flavorText = flavorSelect.options[flavorSelect.selectedIndex].text;
           option = option ? `${flavorText}, ${option}` : flavorText;
-          if (flavorText.includes('Gift Set') && !sizeSelect) {
-            price = 22.00;
-          }
         }
 
         // Specific handling for Sweet Breads card
