@@ -1273,8 +1273,9 @@
         <span class="card-badge">Handcrafted Loaves</span>
         <img src="sweetwhite.jpg" alt="Fresh Baked Sandwich Loaves" class="product-img">
         <h3 class="product-title">Artisan Sandwich Loaf</h3>
-        <p class="product-price">$7.00 – $9.00</p>
+        <p class="product-price">$7.00 – $8.50</p>
         <p class="product-desc">Soft, perfectly sliceable fresh-baked sandwich loaves made from high-quality ingredients.</p>
+        
         <div class="product-actions">
           <div class="select-wrapper">
             <span class="select-label">Bread Variety:</span>
@@ -1608,8 +1609,6 @@
         <select id="c_payment" name="Payment_Method" required>
           <option value="Venmo">Venmo</option>
           <option value="Cash App">Cash App</option>
-          <option value="Zelle">Zelle</option>
-          <option value="Square Invoice">Credit/Debit Card (Square Invoice)</option>
           <option value="Cash on Pickup">Cash on Pickup / Delivery</option>
         </select>
       </div>
@@ -1828,11 +1827,29 @@
         }
 
         // Check for standard flavor dropdowns
-        const flavorSelect = card?.querySelector('.item-flavor-select');
-        if (flavorSelect && flavorSelect.id !== 'sweet-bread-select') {
-          const flavorText = flavorSelect.options[flavorSelect.selectedIndex].text;
-          option = option ? `${flavorText}, ${option}` : flavorText;
-        }
+       const flavorSelect = card?.querySelector('.item-flavor-select');
+
+if (flavorSelect && flavorSelect.id !== 'sweet-bread-select') {
+  const selectedFlavor =
+    flavorSelect.options[flavorSelect.selectedIndex];
+
+  const flavorText =
+    selectedFlavor.dataset.name ||
+    selectedFlavor.text.split('—')[0].trim();
+
+  // Get the sandwich-loaf price from the selected option
+  if (!sizeSelect && selectedFlavor.dataset.name) {
+    const flavorPrice = parseFloat(selectedFlavor.value);
+
+    if (!Number.isNaN(flavorPrice)) {
+      price = flavorPrice;
+    }
+  }
+
+  option = option
+    ? `${flavorText}, ${option}`
+    : flavorText;
+}
 
         // Specific handling for Sweet Breads card
         if (btn.id === 'sweet-bread-btn') {
