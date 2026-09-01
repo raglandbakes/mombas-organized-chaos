@@ -989,20 +989,39 @@
 
     </div>
 
-    <!-- CINNAMON ROLLS -->
+  <!-- CINNAMON ROLLS SECTION -->
     <div id="cinnamon-rolls" class="section-header">
-      <h2>Signature Cinnamon Rolls</h2>
+     <h2>Handcrafted Cinnamon Rolls</h2>
     </div>
+    
+  <!-- DOUGH EXPLANATION BANNER -->
+    <div style="background: var(--card-bg); border: 1px dashed var(--accent); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 2rem; text-align: center;">
+      <p style="font-size: 0.9rem; color: var(--text); margin: 0;">
+        ✨ <strong>Choose Your Dough Base:</strong> Select <strong>Artisan Sourdough</strong> for a long-fermented, lower-glycemic option with subtle tangy depth, or <strong>Classic Yeasted</strong> for a light, pillowy, traditional roll!
+      </p>
+    </div>
+    
     <div class="product-grid">
       
+    <!-- CARD 1: OG CINNY -->
       <div class="product-card">
         <span class="card-badge">Bestseller</span>
-        <img src="ogcinnyrolls.jpg" alt="The OG Cinny" class="product-img">
-        <h3 class="product-title">The OG Cinny</h3>
+        <img src="ogcinnyrolls.jpg" alt="The OG Cinny Roll" class="product-img">
+        <h3 class="product-title">The OG Cinny Roll</h3>
         <p class="product-price">$4.00 – $38.00</p>
-        <p class="product-desc">Our classic signature cinnamon roll loaded with brown sugar, spice, and house icing.</p>
+        <p class="product-desc">Our classic recipe loaded with brown sugar, spice, and signature sweet cream icing.</p>
+        
         <div class="product-actions">
           <div class="select-wrapper">
+            <span class="select-label">Dough Base:</span>
+            <select class="item-dough-select">
+              <option value="Sourdough">Artisan Sourdough</option>
+              <option value="Yeasted">Classic Yeasted</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <span class="select-label">Size / Quantity:</span>
             <select class="item-size-select">
               <option value="4.00">Single Roll — $4.00</option>
               <option value="14.00">4-Pack Box — $14.00</option>
@@ -1010,36 +1029,60 @@
               <option value="38.00">Full Baker's Dozen (13) — $38.00</option>
             </select>
           </div>
-          <button class="btn-select add-to-cart-btn" data-title="The OG Cinny">Add to Cart</button>
+
+          <button class="btn-select add-to-cart-btn" data-title="The OG Cinny Roll">Add to Cart</button>
         </div>
       </div>
 
+     <!-- CARD 2: PUMPKIN SPICE -->
       <div class="product-card">
         <span class="card-badge">Seasonal</span>
-        <img src="pumproll.jpg" alt="Pumpkin Spice Cinny" class="product-img">
+        <img src="pumproll.jpg" alt="Pumpkin Spice Cinny Roll" class="product-img">
         <h3 class="product-title">Pumpkin Spice Cinny</h3>
         <p class="product-price">$15.00 – $40.00</p>
         <p class="product-desc">Warm pumpkin spice swirl with silky cream glaze.</p>
+        
         <div class="product-actions">
           <div class="select-wrapper">
+            <span class="select-label">Dough Base:</span>
+            <select class="item-dough-select">
+              <option value="Sourdough">Artisan Sourdough</option>
+              <option value="Yeasted">Classic Yeasted</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <span class="select-label">Size / Quantity:</span>
             <select class="item-size-select">
               <option value="15.00">4-Pack Box — $15.00</option>
               <option value="22.00">Half Dozen (6) — $22.00</option>
               <option value="40.00">Full Dozen (12) — $40.00</option>
             </select>
           </div>
+
           <button class="btn-select add-to-cart-btn" data-title="Pumpkin Spice Cinny">Add to Cart</button>
         </div>
       </div>
 
+     <!-- CARD 3: GOURMET SPECIALTY -->
       <div class="product-card">
         <span class="card-badge">Gourmet Specialty</span>
         <img src="gourmetrolls.jpg" alt="Gourmet Specialty Cinnamon Rolls" class="product-img">
         <h3 class="product-title">Gourmet Specialty Cinnys</h3>
         <p class="product-price">$15.00 – $42.00</p>
-        <p class="product-desc">Choose from rich Nutella, bold Espresso, Biscoff cookie butter, crushed Oreo cookies & cream, or buttery Sticky Pecan.</p>
+        <p class="product-desc">Choose from Nutella, bold Espresso, Biscoff cookie butter, Oreo cookies & cream, or Sticky Pecan.</p>
+        
         <div class="product-actions">
           <div class="select-wrapper">
+            <span class="select-label">Dough Base:</span>
+            <select class="item-dough-select">
+              <option value="Sourdough">Artisan Sourdough</option>
+              <option value="Yeasted">Classic Yeasted</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <span class="select-label">Flavor Option:</span>
             <select class="item-flavor-select">
               <option value="Nutella">Nutella Swirl</option>
               <option value="Espresso">Bold Espresso</option>
@@ -1048,25 +1091,39 @@
               <option value="Sticky Pecan">Sticky Pecan</option>
             </select>
           </div>
+
           <div class="select-wrapper">
+            <span class="select-label">Size / Quantity:</span>
             <select class="item-size-select">
               <option value="15.00">4-Pack Box — $15.00</option>
               <option value="22.00">Half Dozen (6) — $22.00</option>
               <option value="40.00">Full Dozen (12) — $40.00</option>
             </select>
           </div>
+
           <button class="btn-select add-to-cart-btn" data-title="Gourmet Specialty Cinnys">Add to Cart</button>
         </div>
       </div>
 
+  <!-- CARD 4: FRUIT SPECIALTY -->
       <div class="product-card">
         <span class="card-badge">Specialty</span>
-        <img src="peachroll.jpg" alt="Fruit Specialty Cinnys" class="product-img">
+        <img src="peachroll.jpg" alt="Fruit Specialty Cinnamon Rolls" class="product-img">
         <h3 class="product-title">Fruit Specialty Cinnys</h3>
         <p class="product-price">$15.00 – $40.00</p>
-        <p class="product-desc">Choose from spiced caramelized apple, sweet blueberry, peach cobbler, or fresh strawberry glaze.</p>
+        <p class="product-desc">Filled with spiced caramelized apple, sweet blueberry, peach cobbler, or strawberry glaze.</p>
+        
         <div class="product-actions">
           <div class="select-wrapper">
+            <span class="select-label">Dough Base:</span>
+            <select class="item-dough-select">
+              <option value="Sourdough">Artisan Sourdough</option>
+              <option value="Yeasted">Classic Yeasted</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <span class="select-label">Flavor Option:</span>
             <select class="item-flavor-select">
               <option value="Apple Pie">Apple Pie</option>
               <option value="Blueberry">Blueberry</option>
@@ -1074,13 +1131,16 @@
               <option value="Peach Cobbler">Peach Cobbler</option>
             </select>
           </div>
+
           <div class="select-wrapper">
+            <span class="select-label">Size / Quantity:</span>
             <select class="item-size-select">
               <option value="15.00">4-Pack Box — $15.00</option>
               <option value="22.00">Half Dozen (6) — $22.00</option>
               <option value="40.00">Full Dozen (12) — $40.00</option>
             </select>
           </div>
+
           <button class="btn-select add-to-cart-btn" data-title="Fruit Specialty Cinnys">Add to Cart</button>
         </div>
       </div>
@@ -1181,11 +1241,11 @@
             <span class="select-label">Bread Flavor / Variety:</span>
             <select class="item-flavor-select">
               <option value="Italian Herb">Italian Herb</option>
+              <option value="Jalapeno Cheddar">Jalapeno Cheddar</option>
               <option value="Roasted Garlic and Rosemary">Roasted Garlic and Rosemary</option>
               <option value="Rosemary">Rosemary</option>
               <option value="Plain">Plain</option>
-              <option value="Jalapeno Cheddar">Jalapeno Cheddar</option>
-            </select>
+             </select>
           </div>
           <div class="select-wrapper">
             <span class="select-label">Quantity:</span>
@@ -1209,16 +1269,15 @@
           <div class="select-wrapper">
             <span class="select-label">Bread Variety:</span>
             <select class="item-flavor-select">
-              <option value="Sweet White">Sweet White — $7.00</option>
-              <option value="Honey-Wheat">Honey-Wheat — $7.50</option>
               <option value="Cinnamon Swirl">Cinnamon Swirl — $8.50</option>
+              <option value="Honey-Wheat">Honey-Wheat — $7.50</option>
+              <option value="Sweet White">Sweet White — $7.00</option>
               <option value="Multi-Grain">Multi-Grain — $8.00</option>
             </select>
           </div>
           <div class="select-wrapper">
             <span class="select-label">Preparation:</span>
             <select class="item-prep-select">
-              <option value="Sliced">Pre-Sliced Loaf</option>
               <option value="Whole">Whole Unsliced Loaf</option>
             </select>
           </div>
@@ -1226,22 +1285,21 @@
         </div>
       </div>
 
-      <!-- Bread Flight (1 of Each) -->
+      <!-- Bread Flight (Choice of Three) -->
       <div class="product-card">
         <span class="card-badge">Sampler Pack</span>
         <img src="breadflight.jpg" alt="Bread Flight Sampler" class="product-img">
-        <h3 class="product-title">Bread Flight (1 of Each)</h3>
+        <h3 class="product-title">Bread Flight (Choice of Three)</h3>
         <p class="product-price">$28.00</p>
         <p class="product-desc">Can't decide? Get a sampler flight featuring 1 full loaf of each sandwich variety: Sweet White, Honey-Wheat, Cinnamon Swirl, and Multi-Grain!</p>
         <div class="product-actions">
           <div class="select-wrapper">
             <span class="select-label">Preparation:</span>
             <select class="item-prep-select">
-              <option value="Sliced Flight">All Loaves Pre-Sliced</option>
               <option value="Whole Flight">All Loaves Whole Unsliced</option>
             </select>
           </div>
-          <button class="btn-select add-to-cart-btn" data-title="Bread Flight (1 of Each)" data-price="28.00">Add Flight to Cart ($28.00)</button>
+          <button class="btn-select add-to-cart-btn" data-title="Bread Flight (Choice of Three)" data-price="28.00">Add Flight to Cart ($28.00)</button>
         </div>
       </div>
 
