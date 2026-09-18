@@ -918,8 +918,10 @@
     <nav class="category-nav">
       <a href="#schedule">Bake Schedule</a>
       <a href="#cinnamon-rolls">Cinnamon Rolls</a>
-      <a href="#cookies">Cookies</a>
+      <a href="#cookies">Cookies, Brownies &amp; Blondies</a>
       <a href="#breads">Fresh Breads</a>
+      <a href="#pantry">Mixes &amp; Seasonings</a>
+      <a href="#simmer-pots">Simmer Pots</a>
       <a href="#handcrafts">Handmade Crafts</a>
       <a href="#faq">FAQ</a>
       <a href="#reviews">Reviews</a>
@@ -1149,7 +1151,7 @@
 
     <!-- COOKIES (WITH CAROUSEL TO THE RIGHT) -->
     <div id="cookies" class="section-header">
-      <h2>Gourmet Cookie Flavors</h2>
+      <h2>Cookies, Brownies &amp; Blondies</h2>
     </div>
     
     <div class="cookie-section-layout">
@@ -1219,6 +1221,52 @@
           <span class="indicator-dot" onclick="setCookieSlide(2)"></span>
           <span class="indicator-dot" onclick="setCookieSlide(3)"></span>
           <span class="indicator-dot" onclick="setCookieSlide(4)"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BROWNIES & BLONDIES IN THE COOKIES SECTION -->
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="card-badge">Brownies</span>
+        <h3 class="product-title">Fudge Brownies</h3>
+        <p class="product-price">$3.50 – $52.00</p>
+        <p class="product-desc">Classic chocolate fudge brownies, available by preorder.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <label class="select-label" for="size-fudge-brownies">Choose a size:</label>
+            <select class="item-size-select" id="size-fudge-brownies">
+              <option value="3.50">Single — $3.50</option>
+              <option value="28.00">8×8 Pan — $28.00</option>
+              <option value="52.00">9×13 Pan — $52.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Fudge Brownies">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="card-badge">Blondies</span>
+        <h3 class="product-title">Blondies</h3>
+        <p class="product-price" id="blondie-price-range">$3.50 – $52.00</p>
+        <p class="product-desc">Choose classic, cinnamon roll, or espresso blondies, available by preorder.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <label class="select-label" for="blondie-flavor">Choose a flavor:</label>
+            <select class="item-flavor-select" id="blondie-flavor">
+              <option value="Regular Blondies" data-single="3.50" data-eight="28.00" data-nine="52.00">Regular Blondies</option>
+              <option value="Cinnamon Roll Blondies" data-single="4.00" data-eight="32.00" data-nine="60.00">Cinnamon Roll Blondies</option>
+              <option value="Espresso Blondies" data-single="4.00" data-eight="32.00" data-nine="60.00">Espresso Blondies</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <label class="select-label" for="blondie-size">Choose a size:</label>
+            <select class="item-size-select" id="blondie-size">
+              <option value="3.50" data-price-key="single">Single — $3.50</option>
+              <option value="28.00" data-price-key="eight">8×8 Pan — $28.00</option>
+              <option value="52.00" data-price-key="nine">9×13 Pan — $52.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Blondies">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -1330,6 +1378,88 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- PANTRY MIXES & SIMMER POTS -->
+    <div id="pantry" class="section-header">
+      <h2>Mixes &amp; Seasonings</h2>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="card-badge">Dry Mixes</span>
+        <h3 class="product-title">Homestyle Mixes</h3>
+        <p class="product-price">$5.00 – $10.00</p>
+        <p class="product-desc">Choose a gravy, biscuit, pancake and waffle mix, or bundle for your preorder.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <label class="select-label" for="mix-choice">Choose a mix:</label>
+            <select class="item-size-select" id="mix-choice">
+              <option value="5.00">Country Gravy Mix — $5.00</option>
+              <option value="6.00">Homestyle Biscuit Mix — $6.00</option>
+              <option value="5.00">Creamy Peppered White Gravy — $5.00</option>
+              <option value="10.00">Biscuits and Gravy Bundle — $10.00</option>
+              <option value="6.00">Pancake and Waffle Mix — $6.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Homestyle Mixes">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="card-badge">Seasonings</span>
+        <h3 class="product-title">Seasoning Blends</h3>
+        <p class="product-price">$4.00 each</p>
+        <p class="product-desc">Choose a seasoning blend for your preorder.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <label class="select-label" for="seasoning-choice">Choose a seasoning:</label>
+            <select class="item-size-select" id="seasoning-choice">
+              <option value="4.00">Taco Seasoning — $4.00</option>
+              <option value="4.00">Chili Seasoning — $4.00</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Seasoning Blends">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="simmer-pots" class="section-header">
+      <h2>Simmer Pots</h2>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" id="simmer-pot-card">
+        <span class="card-badge">Home Fragrance</span>
+        <h3 class="product-title">Simmer Pot Blends</h3>
+        <p class="product-price">$7.00 each or 2 for $12.00</p>
+        <p class="product-desc">Choose your scent, or mix and match two for a bundle.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <label class="select-label" for="simmer-first-scent">Choose a scent:</label>
+            <select class="item-flavor-select" id="simmer-first-scent">
+              <option>Apple Orchard</option>
+              <option>Cozy Kitchen</option>
+              <option>Cranberry Orange</option>
+              <option>Christmas Morning</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <label class="select-label" for="simmer-quantity">Choose a quantity:</label>
+            <select class="item-size-select" id="simmer-quantity">
+              <option value="7.00">Single — $7.00</option>
+              <option value="12.00">2-Pack — $12.00</option>
+            </select>
+          </div>
+          <div class="select-wrapper" id="simmer-second-wrapper" hidden>
+            <label class="select-label" for="simmer-second-scent">Choose your second scent:</label>
+            <select id="simmer-second-scent">
+              <option>Apple Orchard</option>
+              <option>Cozy Kitchen</option>
+              <option>Cranberry Orange</option>
+              <option>Christmas Morning</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Simmer Pot Blends">Add to Cart</button>
+        </div>
+      </div>
     </div>
 
     <!-- HANDMADE CROCHET & FIBER ARTS -->
@@ -1809,6 +1939,26 @@
       finalOrderTotal.value = `$${total.toFixed(2)}`;
     }
 
+    // Keep the blondie size prices in sync with the selected flavor.
+    const blondieFlavor = document.getElementById('blondie-flavor');
+    const blondieSize = document.getElementById('blondie-size');
+    blondieFlavor.addEventListener('change', () => {
+      const flavor = blondieFlavor.selectedOptions[0];
+      for (const size of blondieSize.options) {
+        const amount = Number(flavor.dataset[size.dataset.priceKey]);
+        size.value = amount.toFixed(2);
+        size.textContent = `${size.textContent.split('—')[0].trim()} — $${amount.toFixed(2)}`;
+      }
+      document.getElementById('blondie-price-range').textContent =
+        `$${Number(flavor.dataset.single).toFixed(2)} – $${Number(flavor.dataset.nine).toFixed(2)}`;
+    });
+
+    // A two-pack can contain two different simmer pot scents.
+    const simmerQuantity = document.getElementById('simmer-quantity');
+    simmerQuantity.addEventListener('change', () => {
+      document.getElementById('simmer-second-wrapper').hidden = simmerQuantity.value !== '12.00';
+    });
+
     // Add to Cart Click Listeners
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1857,6 +2007,11 @@ if (flavorSelect && flavorSelect.id !== 'sweet-bread-select') {
           const chosen = sweetSelect.options[sweetSelect.selectedIndex];
           price = parseFloat(chosen.getAttribute('data-price'));
           option = chosen.text.split('—')[0].trim();
+        }
+
+        if (card?.id === 'simmer-pot-card' && simmerQuantity.value === '12.00') {
+          const secondScent = document.getElementById('simmer-second-scent').value;
+          option = `${card.querySelector('.item-flavor-select').value} + ${secondScent}, 2-Pack`;
         }
 
         // Check if item exists in cart
