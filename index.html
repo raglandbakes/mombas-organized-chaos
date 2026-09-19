@@ -908,7 +908,7 @@
   <!-- 1. UPCOMING MARKETS & POP-UP BANNER -->
   <div class="market-banner">
     <span>📍 <strong>Find Me Next:</strong> </span>
-    <span>•</span>
+    <span>• </span>
   </div>
 
   <header>
@@ -1226,7 +1226,7 @@
     </div>
 
     <!-- BROWNIES & BLONDIES IN THE COOKIES SECTION -->
-    <div class="product-grid">
+    <div class="product-grid-centered">
       <div class="product-card">
         <span class="card-badge">Brownies</span>
         <h3 class="product-title">Fudge Brownies</h3>
@@ -1384,7 +1384,7 @@
     <div id="pantry" class="section-header">
       <h2>Mixes &amp; Seasonings</h2>
     </div>
-    <div class="product-grid">
+    <div class="product-grid-centered">
       <div class="product-card">
         <span class="card-badge">Dry Mixes</span>
         <h3 class="product-title">Homestyle Mixes</h3>
@@ -1425,39 +1425,72 @@
     <div id="simmer-pots" class="section-header">
       <h2>Simmer Pots</h2>
     </div>
-    <div class="product-grid">
-      <div class="product-card" id="simmer-pot-card">
-        <span class="card-badge">Home Fragrance</span>
-        <h3 class="product-title">Simmer Pot Blends</h3>
+    <div class="product-grid-centered">
+      <div class="product-card simmer-pot-card">
+        <span class="card-badge">Spring &amp; Summer</span>
+        <h3 class="product-title">Spring &amp; Summer Simmer Pots</h3>
         <p class="product-price">$7.00 each or 2 for $12.00</p>
-        <p class="product-desc">Choose your scent, or mix and match two for a bundle.</p>
+        <p class="product-desc">Bright, fresh scents for the warmer seasons. Choose one scent or mix and match two.</p>
         <div class="product-actions">
           <div class="select-wrapper">
-            <label class="select-label" for="simmer-first-scent">Choose a scent:</label>
-            <select class="item-flavor-select" id="simmer-first-scent">
-              <option>Apple Orchard</option>
-              <option>Cozy Kitchen</option>
-              <option>Cranberry Orange</option>
-              <option>Christmas Morning</option>
+            <label class="select-label" for="spring-simmer-first-scent">Choose a scent:</label>
+            <select class="item-flavor-select" id="spring-simmer-first-scent">
+              <option>Strawberry Lemonade</option>
+              <option>Lavender Lemon</option>
+              <option>Tropical Citrus</option>
             </select>
           </div>
           <div class="select-wrapper">
-            <label class="select-label" for="simmer-quantity">Choose a quantity:</label>
-            <select class="item-size-select" id="simmer-quantity">
+            <label class="select-label" for="spring-simmer-quantity">Choose a quantity:</label>
+            <select class="item-size-select simmer-quantity" id="spring-simmer-quantity">
               <option value="7.00">Single — $7.00</option>
               <option value="12.00">2-Pack — $12.00</option>
             </select>
           </div>
-          <div class="select-wrapper" id="simmer-second-wrapper" hidden>
-            <label class="select-label" for="simmer-second-scent">Choose your second scent:</label>
-            <select id="simmer-second-scent">
+          <div class="select-wrapper simmer-second-wrapper" hidden>
+            <label class="select-label" for="spring-simmer-second-scent">Choose your second scent:</label>
+            <select class="simmer-second-scent" id="spring-simmer-second-scent">
+              <option>Strawberry Lemonade</option>
+              <option>Lavender Lemon</option>
+              <option>Tropical Citrus</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Spring &amp; Summer Simmer Pots">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card simmer-pot-card">
+        <span class="card-badge">Fall &amp; Winter</span>
+        <h3 class="product-title">Fall &amp; Winter Simmer Pots</h3>
+        <p class="product-price">$7.00 each or 2 for $12.00</p>
+        <p class="product-desc">Warm, cozy scents for the cooler seasons. Choose one scent or mix and match two.</p>
+        <div class="product-actions">
+          <div class="select-wrapper">
+            <label class="select-label" for="fall-simmer-first-scent">Choose a scent:</label>
+            <select class="item-flavor-select" id="fall-simmer-first-scent">
               <option>Apple Orchard</option>
               <option>Cozy Kitchen</option>
               <option>Cranberry Orange</option>
               <option>Christmas Morning</option>
             </select>
           </div>
-          <button class="btn-select add-to-cart-btn" data-title="Simmer Pot Blends">Add to Cart</button>
+          <div class="select-wrapper">
+            <label class="select-label" for="fall-simmer-quantity">Choose a quantity:</label>
+            <select class="item-size-select simmer-quantity" id="fall-simmer-quantity">
+              <option value="7.00">Single — $7.00</option>
+              <option value="12.00">2-Pack — $12.00</option>
+            </select>
+          </div>
+          <div class="select-wrapper simmer-second-wrapper" hidden>
+            <label class="select-label" for="fall-simmer-second-scent">Choose your second scent:</label>
+            <select class="simmer-second-scent" id="fall-simmer-second-scent">
+              <option>Apple Orchard</option>
+              <option>Cozy Kitchen</option>
+              <option>Cranberry Orange</option>
+              <option>Christmas Morning</option>
+            </select>
+          </div>
+          <button class="btn-select add-to-cart-btn" data-title="Fall &amp; Winter Simmer Pots">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -1953,10 +1986,13 @@
         `$${Number(flavor.dataset.single).toFixed(2)} – $${Number(flavor.dataset.nine).toFixed(2)}`;
     });
 
-    // A two-pack can contain two different simmer pot scents.
-    const simmerQuantity = document.getElementById('simmer-quantity');
-    simmerQuantity.addEventListener('change', () => {
-      document.getElementById('simmer-second-wrapper').hidden = simmerQuantity.value !== '12.00';
+    // A two-pack can contain two different scents from the same seasonal card.
+    document.querySelectorAll('.simmer-pot-card').forEach(card => {
+      const quantity = card.querySelector('.simmer-quantity');
+      const secondWrapper = card.querySelector('.simmer-second-wrapper');
+      quantity.addEventListener('change', () => {
+        secondWrapper.hidden = quantity.value !== '12.00';
+      });
     });
 
     // Add to Cart Click Listeners
@@ -2009,8 +2045,8 @@ if (flavorSelect && flavorSelect.id !== 'sweet-bread-select') {
           option = chosen.text.split('—')[0].trim();
         }
 
-        if (card?.id === 'simmer-pot-card' && simmerQuantity.value === '12.00') {
-          const secondScent = document.getElementById('simmer-second-scent').value;
+        if (card?.classList.contains('simmer-pot-card') && sizeSelect.value === '12.00') {
+          const secondScent = card.querySelector('.simmer-second-scent').value;
           option = `${card.querySelector('.item-flavor-select').value} + ${secondScent}, 2-Pack`;
         }
 
